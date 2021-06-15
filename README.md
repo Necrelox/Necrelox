@@ -49,6 +49,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que A
 Sur mon github vous y trouverez, plein de choses plus ou moins étrange :
 - Des projets scolaires
 - Des projets personelles
+ 
 Ces projet, ne reflètes plus mon niveau actuelles dans les techno utilisés, certains sont même des brouillons ou de vieux projet. Malgrès tout je tiens à les laisser pour me rappeler de mon avancé :grin:.
 
 J'aime énormement les languages C et C++, donc je compte à l'avenir faire plusieurs outils ou libraires. 😄
