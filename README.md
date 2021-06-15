@@ -40,7 +40,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que A
 <a href="https://www.adobe.com/fr/products/photoshop.html">![Photoshop](https://img.shields.io/badge/-Photoshop%20-181717?style=flat-square&logo=adobephotoshop)<a/>
 
 ### Reseau
-<a href="https://getfedora.org/fr/">![discord](https://img.shields.io/badge/-Necrelox%230040-181717?style=flat-square&logo=discord)<a/>
+<a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230040-181717?style=flat-square&logo=discord)<a/>
 <a href="https://twitter.com/Necrelox">![twitter](https://img.shields.io/badge/-%40necrelox-181717?style=flat-square&logo=twitter)<a/>
 
 ### Mon Github :
