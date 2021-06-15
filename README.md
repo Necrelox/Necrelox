@@ -16,6 +16,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que A
 <a href="https://valgrind.org/">![Valgrind](https://img.shields.io/badge/Valgrind--181717?style=flat-square)<a/>
 <a href="https://code.visualstudio.com/docs/cpp/cpp-debug/">![GDBVSCODE](https://img.shields.io/badge/Debug-Visual_Studio_Code-181717?style=flat-square)<a/>
 <a href="https://cutter.re/">![Cutter](https://img.shields.io/badge/Cutter--181717?style=flat-square)<a/>
+<a href="https://criterion.readthedocs.io/en/master/intro.html">![Criterion](https://img.shields.io/badge/Criterion--181717?style=flat-square)<a/>
 
 ![C](https://img.shields.io/badge/-C%20-181717?style=flat-square&logo=C)
 ![CPP](https://img.shields.io/badge/-C++%20-181717?style=flat-square&logo=C%2B%2B)
