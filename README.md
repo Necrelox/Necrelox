@@ -14,6 +14,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que A
 <a href="https://www.gitkraken.com/">![GitKraken](https://img.shields.io/badge/%20-GitKraken%20-181717?style=flat-square&logo=gitkraken)<a/>
 <a href="https://www.sfml-dev.org/index-fr.php">![SFML](https://img.shields.io/badge/-SFML-181717?style=flat-square&logo=SFML)<a/>
 <a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)<a/>
+<a href="https://www.vmware.com/fr.html">![VMWARE](https://img.shields.io/badge/-VMware-181717?style=flat-square&logo=VMware)<a/>
 
 <a href="https://valgrind.org/">![Valgrind](https://img.shields.io/badge/Valgrind--181717?style=flat-square)<a/>
 <a href="https://code.visualstudio.com/docs/cpp/cpp-debug/">![GDBVSCODE](https://img.shields.io/badge/Debug-Visual_Studio_Code-181717?style=flat-square)<a/>
@@ -28,9 +29,14 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que A
 <a href="https://www.docker.com/">![docker](https://img.shields.io/badge/-Docker-181717?style=flat-square&logo=docker)<a/>
 <a href="https://filezilla-project.org/">![filezilla](https://img.shields.io/badge/-FileZilla-181717?style=flat-square&logo=filezilla)<a/>
 <a href="https://www.qt.io/">![Qt](https://img.shields.io/badge/-Qt-181717?style=flat-square&logo=Qt)<a/>
+<a href="https://www.libsdl.org/">![SDL2](https://img.shields.io/badge/SDL2--181717?style=flat-square)<a/>
+<a href="https://www.jenkins.io/">![Jenkins](https://img.shields.io/badge/Jenkins--181717?style=flat-square&logo=Jenkins)<a/>
 
 ![Python](https://img.shields.io/badge/-Python%20-181717?style=flat-square&logo=python)
 ![Csharp](https://img.shields.io/badge/-C_Sharp-181717?style=flat-square&logo=csharp)
+![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
+![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
+![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)
  
 ### Système d'exploitation utilisé :
 <a href="https://kubuntu.org/">![Kubuntu](https://img.shields.io/badge/-Kubuntu%20-181717?style=flat-square&logo=kubuntu)<a/>
@@ -42,6 +48,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que A
 
 ### Outils
 <a href="https://www.adobe.com/fr/products/photoshop.html">![Photoshop](https://img.shields.io/badge/-Photoshop%20-181717?style=flat-square&logo=adobephotoshop)<a/>
+<a href="https://krita.org/fr/">![Krita](https://img.shields.io/badge/-Krita%20-181717?style=flat-square&logo=Krita)<a/>
 
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230040-181717?style=flat-square&logo=discord)<a/>
