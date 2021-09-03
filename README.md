@@ -2,7 +2,7 @@
 
 ### Qui suis-je ? 
 
-Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech, ainsi que Assistant Epitech Region (**AER**).
+Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 
 :star: Je suis passionné par la programmation informatique ainsi que la cybersécurité de manière général.
 
