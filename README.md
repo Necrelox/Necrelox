@@ -43,8 +43,9 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 <a href="https://getfedora.org/fr/">![Fedora](https://img.shields.io/badge/-Fedora%20-181717?style=flat-square&logo=fedora)<a/>
 <a href="https://www.microsoft.com/fr-fr/software-download/windows10ISO">![Win10](https://img.shields.io/badge/-Windows_10%20-181717?style=flat-square&logo=Windows)<a/>
 
-### Editeur utilisé :
+### Editeur ou IDE utilisé :
 <a href="https://code.visualstudio.com/">![vscode](https://img.shields.io/badge/-Visual_Studio_Code%20-181717?style=flat-square&logo=visualstudiocode)
+<a href="https://www.jetbrains.com/clion/">![vscode](https://img.shields.io/badge/-CLion%20-181717?style=flat-square&logo=CLion)
 
 ### Outils
 <a href="https://www.adobe.com/fr/products/photoshop.html">![Photoshop](https://img.shields.io/badge/-Photoshop%20-181717?style=flat-square&logo=adobephotoshop)<a/>
