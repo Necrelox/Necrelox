@@ -46,7 +46,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 ### Editeur ou IDE utilisé :
 <a href="https://code.visualstudio.com/">![vscode](https://img.shields.io/badge/-Visual_Studio_Code%20-181717?style=flat-square&logo=visualstudiocode)
 <a href="https://www.jetbrains.com/clion/">![CLion](https://img.shields.io/badge/-CLion%20-181717?style=flat-square&logo=CLion)
-<a href="https://www.jetbrains.com/idea/">![Intellij](https://img.shields.io/badge/-IntelliJ%20-181717?style=flat-square&logo=Intellij)
+<a href="https://www.jetbrains.com/idea/">![Intellij](https://img.shields.io/badge/-IntelliJ%20-181717?style=flat-square&logo=Intellijidea)
 
 ### Outils
 <a href="https://www.adobe.com/fr/products/photoshop.html">![Photoshop](https://img.shields.io/badge/-Photoshop%20-181717?style=flat-square&logo=adobephotoshop)<a/>
