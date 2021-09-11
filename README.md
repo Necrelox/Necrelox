@@ -16,7 +16,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 <a href="https://www.arduino.cc/">![Arduino](https://img.shields.io/badge/-Arduino-181717?style=flat-square&logo=Arduino)<a/>
 
 <a href="https://valgrind.org/">![Valgrind](https://img.shields.io/badge/Valgrind--181717?style=flat-square)<a/>
-<a href="https://code.visualstudio.com/docs/cpp/cpp-debug/">![GDBVSCODE](https://img.shields.io/badge/GDB-Visual_Studio_Code-181717?style=flat-square)<a/>
+<a href="https://code.visualstudio.com/docs/cpp/cpp-debug/">![GDBVSCODE](https://img.shields.io/badge/GDB-Visual_Studio_Code-181717?style=flat-square&logo=visualstudiocode)<a/>
 <a href="https://www.jetbrains.com/help/clion/debugging-code.html">![GDBCLion](https://img.shields.io/badge/Debug-CLion-181717?style=flat-square&logo=CLion)<a/>
 <a href="https://cutter.re/">![Cutter](https://img.shields.io/badge/Cutter--181717?style=flat-square)<a/>
 <a href="https://criterion.readthedocs.io/en/master/intro.html">![Criterion](https://img.shields.io/badge/Criterion--181717?style=flat-square)<a/>
