@@ -4,7 +4,7 @@
 
 Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 
-:star: Je suis passionné par la programmation informatique ainsi que la cybersécurité de manière général.
+:star: Je suis passionné par la programmation informatique.
 
 ### Les techno que j'ai abordé :
 <a href="https://git-scm.com/">![Git](https://img.shields.io/badge/-Git-181717?style=flat-square&logo=git)<a/>
