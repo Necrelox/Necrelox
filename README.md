@@ -44,7 +44,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 ### Système d'exploitation utilisé :
 <a href="https://kubuntu.org/">![Kubuntu](https://img.shields.io/badge/-Kubuntu%20-181717?style=flat-square&logo=kubuntu)<a/>
 <a href="https://getfedora.org/fr/">![Fedora](https://img.shields.io/badge/-Fedora%20-181717?style=flat-square&logo=fedora)<a/>
-<a href="https://www.microsoft.com/fr-fr/software-download/windows10ISO">![Win10](https://img.shields.io/badge/-Windows_10%20-181717?style=flat-square&logo=Windows)<a/>
+<a href="https://www.microsoft.com/fr-fr/windows/windows-11">![Win10](https://img.shields.io/badge/-Windows_11%20-181717?style=flat-square&logo=Windows)<a/>
 
 ### Editeur ou IDE utilisé :
 <a href="https://code.visualstudio.com/">![vscode](https://img.shields.io/badge/-Visual_Studio_Code%20-181717?style=flat-square&logo=visualstudiocode)
