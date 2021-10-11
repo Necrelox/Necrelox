@@ -24,6 +24,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 
 ![C](https://img.shields.io/badge/-C%20-181717?style=flat-square&logo=C)
 ![CPP](https://img.shields.io/badge/-C++%20-181717?style=flat-square&logo=C%2B%2B)
+![PHP](https://img.shields.io/badge/-PHP-181717?style=flat-square&logo=php)
 
 
 ### Techno survolé :
@@ -38,6 +39,7 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
 ![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
 ![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
 ![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)
+![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
  
 ### Système d'exploitation utilisé :
 <a href="https://kubuntu.org/">![Kubuntu](https://img.shields.io/badge/-Kubuntu%20-181717?style=flat-square&logo=kubuntu)<a/>
