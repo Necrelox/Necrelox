@@ -60,7 +60,7 @@ Mais il n'y a pas que ces techno.
 ### Techno survolé :
 <a href="https://www.docker.com/">![docker](https://img.shields.io/badge/-Docker-181717?style=flat-square&logo=docker)<a/>
 <a href="https://filezilla-project.org/">![filezilla](https://img.shields.io/badge/-FileZilla-181717?style=flat-square&logo=filezilla)<a/>
-<a href="https://www.jenkins.io/">![Jenkins](https://img.shields.io/badge/Jenkins--181717?style=flat-square&logo=Jenkins)<a/>
+<a href="https://www.jenkins.io/">![Jenkins](https://img.shields.io/badge/-Jenkins-181717?style=flat-square&logo=Jenkins)<a/>
  
 <a href="https://www.qt.io/">![Qt](https://img.shields.io/badge/-Qt-181717?style=flat-square&logo=Qt)<a/>
 <a href="https://www.libsdl.org/">![SDL2](https://img.shields.io/badge/SDL2--181717?style=flat-square)<a/>
