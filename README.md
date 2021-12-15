@@ -85,9 +85,10 @@ Mais il n'y a pas que ces techno.
 <a href="https://www.jetbrains.com/idea/">![Intellij](https://img.shields.io/badge/-IntelliJ%20-181717?style=flat-square&logo=Intellijidea)
  <a href="https://www.jetbrains.com/fr-fr/phpstorm/">![PhPStorm](https://img.shields.io/badge/-PhpStorm-181717?style=flat-square&logo=phpstorm)
 
-### Outils
+### Outils très secondaire
 <a href="https://www.adobe.com/fr/products/photoshop.html">![Photoshop](https://img.shields.io/badge/-Photoshop%20-181717?style=flat-square&logo=adobephotoshop)<a/>
 <a href="https://krita.org/fr/">![Krita](https://img.shields.io/badge/-Krita%20-181717?style=flat-square&logo=Krita)<a/>
+<a href="https://staruml.io/">![Stars Uml](https://img.shields.io/badge/Stars UML--181717?style=flat-square)<a/>
 
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230040-181717?style=flat-square&logo=discord)<a/>
