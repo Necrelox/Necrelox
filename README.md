@@ -91,7 +91,6 @@ Mais il n'y a pas que ces techno.
 
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230040-181717?style=flat-square&logo=discord)<a/>
-<a href="https://twitter.com/Necrelox">![twitter](https://img.shields.io/badge/-%40necrelox-181717?style=flat-square&logo=twitter)<a/>
 
  
 [![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=Necrelox)](https://github.com/Necrelox)
