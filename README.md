@@ -12,13 +12,13 @@ Sur mon github vous y trouverez, plein de choses plus ou moins étrange :
 - Des projets scolaires
 - Des projets personnelles
  
-Ces projets, ne reflètent souvent plus mon niveau actuelles dans les techno utilisés, certains sont même des brouillons, ou de vieux projet.
-Malgrès tout je tiens à les laisser pour me rappeler de mon avancé :grin:.
+Ces projets, ne reflètent souvent plus mon niveau actuel dans les technologies utilisés, certains sont même des brouillons, ou de vieux projet.
+Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
-Vous y trouverez de tout et n'importe quoi certains readme sont à faire ! je vous demande un peu de patience je suis sur plein de front en même temps !
+Vous y trouverez de tout et n'importe quoi certains readme sont à faire ! Je vous demande un peu de patience je suis sur plein de front en même temps !
 Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des projets. (Vous avez mes réseaux plus bas :wink: )
  
-J'aime énormement les languages C et C++, donc je compte à l'avenir faire plusieurs outils ou libraires. 😄
+J'aime énormément les languages, C et C++, donc je compte à l'avenir faire plusieurs outils ou libraires. 😄
 
 Mais il n'y a pas que ces techno.
 
