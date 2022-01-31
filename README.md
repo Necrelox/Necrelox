@@ -52,13 +52,17 @@ Mais il n'y a pas que ces techno.
 
 ![C](https://img.shields.io/badge/-C%20-181717?style=flat-square&logo=C)
 ![CPP](https://img.shields.io/badge/-C++%20-181717?style=flat-square&logo=C%2B%2B)
+ 
+ ![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)
+ 
 ![PHP](https://img.shields.io/badge/-PHP-181717?style=flat-square&logo=php)
 ![Java](https://img.shields.io/badge/-Java-181717?style=flat-square&logo=java)
-![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)
+![NodeJS](https://img.shields.io/badge/-NodeJs-181717?style=flat-square&logo=NodeJs)
+ 
+![React](https://img.shields.io/badge/-ReactJs-181717?style=flat-square&logo=React)
+![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
 ![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
 ![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
-![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
-
 
 ### Techno survolé :
 <a href="https://www.docker.com/">![docker](https://img.shields.io/badge/-Docker-181717?style=flat-square&logo=docker)<a/>
