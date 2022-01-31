@@ -1,7 +1,9 @@
 ## Bienvenue ! :smiley:
 
 (Up : tout les readme vont être mis à jours, cette semaine du 31 Janvier au 6 Février.)
+
 (Up : un nouveau projet va être ajouté {IRC JS})
+
 (Reprise du projet {PasDeNom} en plus avec un peu de chance je trouverai un nom. [*pas sûr*])
 
 ### Qui suis-je ? 
