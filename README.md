@@ -55,6 +55,9 @@ Mais il n'y a pas que ces techno.
 ![PHP](https://img.shields.io/badge/-PHP-181717?style=flat-square&logo=php)
 ![Java](https://img.shields.io/badge/-Java-181717?style=flat-square&logo=java)
 ![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)
+![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
+![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
+![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
 
 
 ### Techno survolé :
@@ -69,9 +72,7 @@ Mais il n'y a pas que ces techno.
 
 ![Python](https://img.shields.io/badge/-Python%20-181717?style=flat-square&logo=python)
 ![Csharp](https://img.shields.io/badge/-C_Sharp-181717?style=flat-square&logo=csharp)
-![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
-![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
-![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
+
  
 ### Système d'exploitation utilisé :
 <a href="https://kubuntu.org/">![Kubuntu](https://img.shields.io/badge/-Kubuntu%20-181717?style=flat-square&logo=kubuntu)<a/>
