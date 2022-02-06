@@ -1,6 +1,6 @@
 ## Bienvenue ! :smiley:
 
-(Up : tout les readme vont être mis à jours, cette semaine du 31 Janvier au 6 Février.)
+(Up : tout les readme vont être mis à jours, cette semaine du 07 au 13 Février.)
 
 (Up : un nouveau projet va être ajouté {IRC JS})
 
