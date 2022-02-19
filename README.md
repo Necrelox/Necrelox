@@ -2,13 +2,13 @@
 
 - [ ] tout les readme à jours 
 - [ ] un nouveau projet va être ajouté {IRC JS}
-- [ ] Reprise du projet {PasDeNom} en plus avec un peu de chance je trouverai un nom. [*pas sûr*]
+- [x] Reprise du projet {PasDeNom} en plus avec un peu de chance je trouverai un nom. [*pas sûr*] (Passage en privé le temps de remettre une bonne base le 20/02/22)
 
 ### Qui suis-je ? 
 
-Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech.
+Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice.
 
-:star: Je suis passionné par la programmation informatique.
+:star: Je suis passionné par la programmation informatique (oui c'est vague mais tout est si bien).
 
 ### Mon Github :
 
@@ -21,10 +21,6 @@ Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
 Vous y trouverez de tout et n'importe quoi certains readme sont à faire ! Je vous demande un peu de patience je suis sur plein de front en même temps !
 Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des projets. (Vous avez mes réseaux plus bas :wink: )
- 
-J'aime énormément les languages, C et C++, donc je compte à l'avenir faire plusieurs outils ou libraires. 😄
-
-Mais il n'y a pas que ces techno.
 
 ### Les techno que j'ai abordé :
 <a href="https://git-scm.com/">![Git](https://img.shields.io/badge/-Git-181717?style=flat-square&logo=git)<a/>
