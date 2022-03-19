@@ -60,7 +60,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 ![Java](https://img.shields.io/badge/-Java-181717?style=flat-square&logo=java)
 ![NodeJS](https://img.shields.io/badge/-NodeJs-181717?style=flat-square&logo=NodeJs)
  
-![React](https://img.shields.io/badge/-ReactJs-181717?style=flat-square&logo=React)
+![React](https://img.shields.io/badge/-React-181717?style=flat-square&logo=React)
 ![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
 ![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
 ![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
