@@ -96,7 +96,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 <a href="https://staruml.io/">![Stars Uml](https://img.shields.io/badge/StarsUML--181717?style=flat-square)<a/>
 
 ### Reseau
-<a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230040-181717?style=flat-square&logo=discord)<a/>
+<a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
 
  
 [![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=Necrelox)](https://github.com/Necrelox)
