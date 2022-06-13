@@ -2,6 +2,7 @@
 
 - [ ] tout les readme à jours 
 - [ ] un nouveau projet avec des threads en NodeJs va être ajouté
+- [ ] Mettre à jour le readme profil
 - [x] un nouveau projet va être ajouté {IRC JS}
 - [x] Reprise du projet {PasDeNom} en plus avec un peu de chance je trouverai un nom. [*pas sûr*]
 
