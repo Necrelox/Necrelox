@@ -21,6 +21,15 @@ jobs:
           plugin_people_limit: 24
           plugin_people_size: 24
           plugin_people_types: followers, following
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
           verify: yes
           optimize: yes
           retries: 3
