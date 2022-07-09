@@ -104,7 +104,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 
 [![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)]()
 
-<div style="display: flex">
+<div style="display: inline-block">
  <img align="left" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/necrelox-metrics_left.svg">
  <img align="right" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
 </div>
