@@ -87,7 +87,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 
 #### SGBD (Pour la gestion de base de donnée)
 <a href="https://www.mysql.com/fr/">![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)</a>
-<a href="https://www.mysql.com/fr/">![MariaDb](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MariaDB)</a>
+<a href="https://www.mysql.com/fr/">![MariaDb](https://img.shields.io/badge/-MariaDB-181717?style=flat-square&logo=MariaDB)</a>
 
 #### Bonus
 > Je suis capable d'utiliser un débogueur dans les langages que j'utilise.
