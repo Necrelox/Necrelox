@@ -102,3 +102,5 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
  
 [![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=Necrelox)](https://github.com/Necrelox)
 
+[![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)]()
+
