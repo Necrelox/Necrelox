@@ -1,3 +1,4 @@
+** EN COURS DE MODIFICATION **
 ## Bienvenue ! :smiley:
 
 - [ ] tout les readme à jours 
@@ -12,27 +13,40 @@ Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice,
 
 J'aime bien faire un peu n'importe quoi ça peut être des programmes étranges à des utilitaires ou même de vrai projets.
 
-
-
 ### Mon Github :
 
 Sur mon github vous y trouverez, plein de choses plus ou moins étrange :
 - Des projets scolaires
 - Des projets personnelles
  
-Ces projets, ne reflètent souvent plus mon niveau actuel dans les technologies utilisés, certains sont même des brouillons, ou de vieux projet.
+Ces projets, ne reflètent pas mon niveau actuel dans les technologies utilisés, certains sont même des brouillons, ou de vieux projet.
 Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
 Vous y trouverez de tout et n'importe quoi certains readme sont à faire ! Je vous demande un peu de patience je suis sur plein de front en même temps !
 Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des projets. (Vous avez mes réseaux plus bas :wink: )
 
 ### Les techno que j'ai abordé :
-<a href="https://git-scm.com/">![Git](https://img.shields.io/badge/-Git-181717?style=flat-square&logo=git)<a/>
-<a href="https://github.com/">![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)<a/>
-<a href="https://www.gitkraken.com/">![GitKraken](https://img.shields.io/badge/%20-GitKraken%20-181717?style=flat-square&logo=gitkraken)<a/>
+
+#### Versionnage
+| Outil  | UI  | Platforme |
+|---   |---       |---|
+|<a href="https://git-scm.com/">![Git](https://img.shields.io/badge/-Git-181717?style=flat-square&logo=git)</a>|<a href="https://www.gitkraken.com/">![GitKraken](https://img.shields.io/badge/%20-GitKraken%20-181717?style=flat-square&logo=gitkraken)</a>|<a href="https://github.com/">![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)</a>|
+
+
+
+
  
-<a href="https://www.sfml-dev.org/index-fr.php">![SFML](https://img.shields.io/badge/-SFML-181717?style=flat-square&logo=SFML)<a/>
-<a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)<a/> 
+#### Librairie ou framework graphique (Web / Desktop / Mobile)
+
+| Web  | Desktop  | Mobile |
+|---   |---       |---|
+|<a href="https://reactjs.org/">![React](https://img.shields.io/badge/-React-181717?style=flat-square&logo=React)|<a href="https://www.sfml-dev.org/index-fr.php">![SFML](https://img.shields.io/badge/-SFML-181717?style=flat-square&logo=SFML)<a/>|<a href="https://reactnative.dev/">![React-Native](https://img.shields.io/badge/-React_Native-181717?style=flat-square&logo=React)<a/>   |
+|      |<a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)<a/>|   |
+|      |          |   |
+
+
+
+
  
 <a href="https://www.vmware.com/fr.html">![VMWARE](https://img.shields.io/badge/-VMware-181717?style=flat-square&logo=VMware)<a/>
  
@@ -63,7 +77,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 ![Java](https://img.shields.io/badge/-Java-181717?style=flat-square&logo=java)
 ![NodeJS](https://img.shields.io/badge/-NodeJs-181717?style=flat-square&logo=NodeJs)
  
-![React](https://img.shields.io/badge/-React-181717?style=flat-square&logo=React)
+
 ![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
 ![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
 ![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
@@ -101,7 +115,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
 
-[![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)]()
+[![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)
 
 ### Metrics
 <div>
