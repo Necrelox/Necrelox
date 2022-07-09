@@ -1,4 +1,4 @@
-** EN COURS DE MODIFICATION **
+**EN COURS DE MODIFICATION**
 ## Bienvenue ! :smiley:
 
 - [ ] tout les readme à jours 
