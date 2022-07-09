@@ -9,21 +9,47 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: 📊 Metrics (left)
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: Necrelox
           template: classic
           base: activity, community, repositories, metadata
           config_timezone: Europe/Monaco
+          plugin_people: yes
+          plugin_people_limit: 24
+          plugin_people_size: 24
+          plugin_people_types: followers, following
+          verify: yes
+          optimize: yes
+          retries: 3
+          retries_delay: 120
+          filename: necrelox-metrics_left.svg
+          output_action: commit
+          committer_branch: output
+          committer_message: "chore: update metrics"
+          
+      - name: 📊 Metrics (right)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          user: Necrelox
+          template: classic
+          config_timezone: Europe/Monaco
+          config_twemoji: yes
+          config_display: columns
           plugin_achievements: yes
           plugin_achievements_display: detailed
           plugin_achievements_secrets: yes
           plugin_achievements_threshold: C
-          plugin_people: yes
-          plugin_people_limit: 24
-          plugin_people_size: 28
-          plugin_people_types: followers, following
+          plugins_errors_fatal: yes
+          verify: yes
+          optimize: yes
+          retries: 3
+          retries_delay: 120
+          filename: necrelox-metrics_right.svg
           output_action: commit
           committer_branch: output
           committer_message: "chore: update metrics"
