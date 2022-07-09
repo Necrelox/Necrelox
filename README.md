@@ -1,12 +1,6 @@
 **EN COURS DE MODIFICATION**
 ## Bienvenue ! :smiley:
 
-- [ ] tout les readme à jours 
-- [ ] un nouveau projet avec des threads en NodeJs va être ajouté
-- [ ] Mettre à jour le readme profil
-- [x] un nouveau projet va être ajouté {IRC JS}
-- [x] Reprise du projet {PasDeNom} en plus avec un peu de chance je trouverai un nom. [*pas sûr*]
-
 ### Qui suis-je ? 
 
 Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice,
@@ -22,7 +16,10 @@ Sur mon github vous y trouverez, plein de choses plus ou moins étrange :
 Ces projets, ne reflètent pas mon niveau actuel dans les technologies utilisés, certains sont même des brouillons, ou de vieux projet.
 Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
-Vous y trouverez de tout et n'importe quoi certains readme sont à faire ! Je vous demande un peu de patience je suis sur plein de front en même temps !
+Vous y trouverez de tout et n'importe quoi certains readme sont à faire !
+
+Je vous demande un peu de patience je suis sur plein de front en même temps !
+
 Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des projets. (Vous avez mes réseaux plus bas :wink: )
 
 ### Les techno que j'ai abordé :
@@ -113,9 +110,12 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 ##### Interface graphique préféré
 - KDE (Si vous avez besoins d'explication, contactez moi et je vous prouverez que Gnome est un desastre)
 
-
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
+
+### Mini Todo
+- [ ] tout les readme à jours (va falloir êtres giga patient)
+- [ ] un nouveau projet avec des threads en Js / NodeJs va être ajouté
 
 [![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)
 
