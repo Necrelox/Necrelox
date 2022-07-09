@@ -104,7 +104,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 #### Bonus
 > Je suis capable d'utiliser un débogueur dans les langages que j'utilise.
  
-> Je suis capable de faire des test unitaires dans les langages que j'utilise.
+> Je suis capable de faire des tests unitaires dans les langages que j'utilise.
  
 > Je peux aussi faire un profilage de code en C et C++ et je peux certainement m'en sortir dans d'autres langages si nécessaire.
 
