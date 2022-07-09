@@ -31,86 +31,88 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 | Outil  | UI  | Platforme |
 |---   |---       |---|
 |<a href="https://git-scm.com/">![Git](https://img.shields.io/badge/-Git-181717?style=flat-square&logo=git)</a>|<a href="https://www.gitkraken.com/">![GitKraken](https://img.shields.io/badge/%20-GitKraken%20-181717?style=flat-square&logo=gitkraken)</a>|<a href="https://github.com/">![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)</a>|
-
-
-
-
  
-#### Librairie ou framework graphique (Web / Desktop / Mobile)
+#### Librairie ou framework (Web / Desktop / Mobile)
+
+##### Vue pas mal de fois
 
 | Web  | Desktop  | Mobile |
 |---   |---       |---|
-|<a href="https://reactjs.org/">![React](https://img.shields.io/badge/-React-181717?style=flat-square&logo=React)|<a href="https://www.sfml-dev.org/index-fr.php">![SFML](https://img.shields.io/badge/-SFML-181717?style=flat-square&logo=SFML)<a/>|<a href="https://reactnative.dev/">![React-Native](https://img.shields.io/badge/-React_Native-181717?style=flat-square&logo=React)<a/>   |
-|      |<a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)<a/>|   |
-|      |          |   |
+|<a href="https://reactjs.org/">![React](https://img.shields.io/badge/-React-181717?style=flat-square&logo=React)</a>|<a href="https://www.sfml-dev.org/index-fr.php">![SFML](https://img.shields.io/badge/-SFML-181717?style=flat-square&logo=SFML)</a>|<a href="https://reactnative.dev/">![React-Native](https://img.shields.io/badge/-React_Native-181717?style=flat-square&logo=React)</a>   |
+|      |<a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)</a>|   |
 
 
+####  Pas vu énormement (mais ils sont interessant)
+| Web  | Desktop  | Mobile |
+|---   |---       |---|
+|<a href="https://spring.io/">![Spring](https://img.shields.io/badge/-Spring-181717?style=flat-square&logo=Spring)</a>|<a href="https://www.qt.io/">![Qt](https://img.shields.io/badge/-Qt-181717?style=flat-square&logo=Qt)</a>||
+||<a href="https://www.libsdl.org/">![SDL2](https://img.shields.io/badge/SDL2--181717?style=flat-square)</a>||
 
+#### Outils
 
- 
-<a href="https://www.vmware.com/fr.html">![VMWARE](https://img.shields.io/badge/-VMware-181717?style=flat-square&logo=VMware)<a/>
- 
-<a href="https://www.arduino.cc/">![Arduino](https://img.shields.io/badge/-Arduino-181717?style=flat-square&logo=Arduino)<a/>
+##### IDE / Editeurs de texte (oui car VS code n'est pas un ide :rage:)
+<a href="https://code.visualstudio.com/">![VSCODE](https://img.shields.io/badge/Visual_Studio_Code-181717?style=flat-square&logo=visualstudiocode)</a>
+<a href="https://www.jetbrains.com/clion/">![CLion](https://img.shields.io/badge/CLion-181717?style=flat-square&logo=CLion)</a>
+<a href="https://www.jetbrains.com/idea/">![IntellJ](https://img.shields.io/badge/IntellJ-181717?style=flat-square&logo=Intellijidea)</a>
+##### Logiciel de virtualisation déjà touché
+<a href="https://www.vmware.com/fr.html">![VMWARE](https://img.shields.io/badge/-VMware-181717?style=flat-square&logo=VMware)</a>
+<a href="https://www.virtualbox.org/">![VirtualBox](https://img.shields.io/badge/-VirtualBox-181717?style=flat-square&logo=VirtualBox)</a>
 
-<a href="https://valgrind.org/">![Valgrind](https://img.shields.io/badge/Valgrind--181717?style=flat-square)<a/>
-<a href="https://cutter.re/">![Cutter](https://img.shields.io/badge/Cutter--181717?style=flat-square)<a/>
-<a href="https://criterion.readthedocs.io/en/master/intro.html">![Criterion](https://img.shields.io/badge/Criterion--181717?style=flat-square)<a/>
- 
-<a href="https://code.visualstudio.com/docs/cpp/cpp-debug/">![GDBVSCODE](https://img.shields.io/badge/GDB-Visual_Studio_Code-181717?style=flat-square&logo=visualstudiocode)<a/>
- 
-<a href="https://www.jetbrains.com/help/clion/debugging-code.html">![GDBCLion](https://img.shields.io/badge/Debug-CLion-181717?style=flat-square&logo=CLion)<a/>
-<a href="https://www.jetbrains.com/help/clion/cpu-profiler.html">![PerfCLion](https://img.shields.io/badge/Profiler-CLion-181717?style=flat-square&logo=CLion)<a/>
- 
-<a href="https://www.jetbrains.com/help/idea/debugging-code.html#236f1993">![DBGIntellJ](https://img.shields.io/badge/Debug-IntellJ-181717?style=flat-square&logo=Intellijidea)<a/>
-<a href="https://www.jetbrains.com/help/idea/cpu-profiler.html">![ProfilerIntellj](https://img.shields.io/badge/Profiler-IntellJ-181717?style=flat-square&logo=Intellijidea)<a/>
- 
-<a href="https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm-ultimate-guide.html">![XdebugPhpStorm](https://img.shields.io/badge/XDebug-PhpStorm-181717?style=flat-square&logo=phpstorm)<a/>
- 
-<a href="https://www.postman.com/">![Postman](https://img.shields.io/badge/-Postman-181717?style=flat-square&logo=postman)<a/>
+#### Autres
 
-![C](https://img.shields.io/badge/-C%20-181717?style=flat-square&logo=C)
-![CPP](https://img.shields.io/badge/-C++%20-181717?style=flat-square&logo=C%2B%2B)
- 
- ![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)
- 
-![PHP](https://img.shields.io/badge/-PHP-181717?style=flat-square&logo=php)
-![Java](https://img.shields.io/badge/-Java-181717?style=flat-square&logo=java)
-![NodeJS](https://img.shields.io/badge/-NodeJs-181717?style=flat-square&logo=NodeJs)
- 
-
-![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
-![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
-![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
-
-### Techno survolé :
+##### Souvent utilisé
+<a href="https://www.postman.com/">![Postman](https://img.shields.io/badge/-Postman-181717?style=flat-square&logo=postman)</a>
+##### Peu Utilisé
 <a href="https://www.docker.com/">![docker](https://img.shields.io/badge/-Docker-181717?style=flat-square&logo=docker)<a/>
 <a href="https://filezilla-project.org/">![filezilla](https://img.shields.io/badge/-FileZilla-181717?style=flat-square&logo=filezilla)<a/>
 <a href="https://www.jenkins.io/">![Jenkins](https://img.shields.io/badge/-Jenkins-181717?style=flat-square&logo=Jenkins)<a/>
- 
-<a href="https://www.qt.io/">![Qt](https://img.shields.io/badge/-Qt-181717?style=flat-square&logo=Qt)<a/>
-<a href="https://www.libsdl.org/">![SDL2](https://img.shields.io/badge/SDL2--181717?style=flat-square)<a/>
-<a href="https://spring.io/">![Spring](https://img.shields.io/badge/-Spring-181717?style=flat-square&logo=Spring)<a/>
+<a href="https://cutter.re/">![Cutter](https://img.shields.io/badge/Cutter--181717?style=flat-square)</a>
 
+#### Langages
+##### Utilisé le plus
+![C](https://img.shields.io/badge/-C%20-181717?style=flat-square&logo=C)
+![CPP](https://img.shields.io/badge/-C++%20-181717?style=flat-square&logo=C%2B%2B)
+<a href="https://www.arduino.cc/">![Arduino](https://img.shields.io/badge/-Arduino-181717?style=flat-square&logo=Arduino)</a>
 
+![JS](https://img.shields.io/badge/-JavaScript-181717?style=flat-square&logo=javascript)
+![TS](https://img.shields.io/badge/-TypeScript-181717?style=flat-square&logo=TypeScript)
+
+![PHP](https://img.shields.io/badge/-PHP-181717?style=flat-square&logo=php)
+
+![CSS](https://img.shields.io/badge/-HTML-181717?style=flat-square&logo=CSS3)
+![HTML](https://img.shields.io/badge/-CSS-181717?style=flat-square&logo=HTML5)
+##### Très peu utilisé
+![Java](https://img.shields.io/badge/-Java-181717?style=flat-square&logo=java)
 ![Python](https://img.shields.io/badge/-Python%20-181717?style=flat-square&logo=python)
 ![Csharp](https://img.shields.io/badge/-C_Sharp-181717?style=flat-square&logo=csharp)
+##### Environnement
+![NodeJS](https://img.shields.io/badge/-NodeJs-181717?style=flat-square&logo=Node.Js)
 
+#### SGBD (Pour la gestion de base de donnée)
+<a href="https://www.mysql.com/fr/">![MySql](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MySQL)</a>
+<a href="https://www.mysql.com/fr/">![MariaDb](https://img.shields.io/badge/-MySQL-181717?style=flat-square&logo=MariaDB)</a>
+
+#### Bonus
+> Je suis capable d'utiliser un débogueur dans les langages que j'utilise.
  
+> Je suis capable de faire des test unitaires dans les langages que j'utilise.
+ 
+> Je peux aussi faire un profilage de code en C et C++ et je peux certainement m'en sortir dans d'autre langage si besoins est.
+
 ### Système d'exploitation utilisé :
+
+#### Actuel
+<a href="https://ubuntu.com/">![Ubuntu20.04](https://img.shields.io/badge/-Ubuntu_20.4%20-181717?style=flat-square&logo=ubuntu)</a>
+*Interface gnome, c'est décevant...*
+#### Secondaire
+<a href="https://www.microsoft.com/fr-fr/windows/windows-11">![Win10](https://img.shields.io/badge/-Windows_10%20-181717?style=flat-square&logo=Windows)</a>
+#### Déjà utilisé
 <a href="https://kubuntu.org/">![Kubuntu](https://img.shields.io/badge/-Kubuntu%20-181717?style=flat-square&logo=kubuntu)<a/>
 <a href="https://getfedora.org/fr/">![Fedora](https://img.shields.io/badge/-Fedora%20-181717?style=flat-square&logo=fedora)<a/>
-<a href="https://www.microsoft.com/fr-fr/windows/windows-11">![Win10](https://img.shields.io/badge/-Windows_11%20-181717?style=flat-square&logo=Windows)<a/>
 
-### Editeur ou IDE utilisé :
-<a href="https://code.visualstudio.com/">![vscode](https://img.shields.io/badge/-Visual_Studio_Code%20-181717?style=flat-square&logo=visualstudiocode)
-<a href="https://www.jetbrains.com/clion/">![CLion](https://img.shields.io/badge/-CLion%20-181717?style=flat-square&logo=CLion)
-<a href="https://www.jetbrains.com/idea/">![Intellij](https://img.shields.io/badge/-IntelliJ%20-181717?style=flat-square&logo=Intellijidea)
- <a href="https://www.jetbrains.com/fr-fr/phpstorm/">![PhPStorm](https://img.shields.io/badge/-PhpStorm-181717?style=flat-square&logo=phpstorm)
+##### Interface graphique préféré
+- KDE (Si vous avez besoins d'explication, contactez moi et je vous prouverez que Gnome est un desastre)
 
-### Outils très secondaire
-<a href="https://www.adobe.com/fr/products/photoshop.html">![Photoshop](https://img.shields.io/badge/-Photoshop%20-181717?style=flat-square&logo=adobephotoshop)<a/>
-<a href="https://krita.org/fr/">![Krita](https://img.shields.io/badge/-Krita%20-181717?style=flat-square&logo=Krita)<a/>
-<a href="https://staruml.io/">![Stars Uml](https://img.shields.io/badge/StarsUML--181717?style=flat-square)<a/>
 
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
