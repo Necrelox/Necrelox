@@ -101,9 +101,6 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
 
- 
-[![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=Necrelox&theme=onedark)](https://github.com/Necrelox)
-
 [![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)]()
 
 ### Metrics
