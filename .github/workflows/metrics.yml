@@ -33,6 +33,8 @@ jobs:
           plugin_languages_threshold: 0%
           plugin_lines: yes
           plugin_repositories: yes
+          outputs: |
+            dist/github-metrics.svg
 
       - name: push github-metrics.svg to the output branch
         uses: crazy-max/ghaction-github-pages@v2.6.0
