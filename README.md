@@ -30,7 +30,7 @@ Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
 Vous y trouverez de tout et n'importe quoi certains readme sont à faire !
 
-Je vous demande un peu de patience je suis sur plein de front en même temps !
+Je vous demande un peu de patience, je suis sur plein de front en même temps !
 
 Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des projets. (Vous avez mes réseaux plus bas :wink: )
 
@@ -106,7 +106,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
  
 > Je suis capable de faire des test unitaires dans les langages que j'utilise.
  
-> Je peux aussi faire un profilage de code en C et C++ et je peux certainement m'en sortir dans d'autre langage si besoins est.
+> Je peux aussi faire un profilage de code en C et C++ et je peux certainement m'en sortir dans d'autres langages si nécessaire.
 
 ### Système d'exploitation utilisé :
 
@@ -120,7 +120,7 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 <a href="https://getfedora.org/fr/">![Fedora](https://img.shields.io/badge/-Fedora%20-181717?style=flat-square&logo=fedora)<a/>
 
 ##### Interface graphique préféré
-- KDE (Si vous avez besoins d'explication, contactez moi et je vous prouverez que Gnome est un desastre)
+- KDE (Si vous avez besoin d'explication, contactez-moi et je vous prouverez que Gnome est un désastre)
 
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
