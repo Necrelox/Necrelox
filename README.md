@@ -1,6 +1,18 @@
 **EN COURS DE MODIFICATION**
 ## Bienvenue ! :smiley:
+[![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)
 
+### Metrics
+
+<p style="width: 100%">
+  <img align="left" style="width: 45%" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/necrelox-metrics_left.svg">
+  <img align="right" style="width: 45%" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
+</p>
+
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+## Présentation
 ### Qui suis-je ? 
 
 Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice,
@@ -116,14 +128,4 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 ### Mini Todo
 - [ ] tout les readme à jours (va falloir êtres giga patient)
 - [ ] un nouveau projet avec des threads en Js / NodeJs va être ajouté
-
-[![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)
-
-### Metrics
-<div>
- <p style="width: 100%">
-  <img align="left" style="width: 45%" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/necrelox-metrics_left.svg">
-  <img align="right" style="width: 45%" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
- </p>
-</div>
 
