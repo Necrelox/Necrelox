@@ -6,7 +6,7 @@
 
 <p style="width: 100%">
   <img align="left" style="width: 50%" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/necrelox-metrics_left.svg">
-  <img align="right" style="width: 48%" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
+  <img align="right" style="width: 47%" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
 </p>
 
 ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
