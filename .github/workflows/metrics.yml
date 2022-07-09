@@ -34,7 +34,6 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
           user: Necrelox
           template: classic
           config_timezone: Europe/Monaco
