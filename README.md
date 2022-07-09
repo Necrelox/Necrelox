@@ -8,16 +8,13 @@
 
 ### Qui suis-je ? 
 
-Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice.
+Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice,
 
-:star: Je suis passionné par la programmation informatique (oui c'est vague mais tout est si bien).
+J'aime bien faire un peu n'importe quoi ça peut être des programmes étranges à des utilitaires ou même de vrai projets.
+
+
 
 ### Mon Github :
-
-<p>
- <img align="left" style="width: 45%" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/necrelox-metrics_left.svg">
- <img align="right" style="width: 45%" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
-</p>
 
 Sur mon github vous y trouverez, plein de choses plus ou moins étrange :
 - Des projets scolaires
@@ -105,9 +102,15 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
 
  
-[![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=Necrelox)](https://github.com/Necrelox)
+[![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=Necrelox&theme=onedark)](https://github.com/Necrelox)
 
 [![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)]()
 
-
+### Metrics
+<div>
+ <p style="width: 100%">
+  <img align="left" style="width: 45%" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/necrelox-metrics_left.svg">
+  <img align="right" style="width: 45%" src="https://metrics.lecoq.io/Necrelox?template=classic&base.header=0&base.activity=0&base.community=0&base.repositories=0&base.metadata=0&achievements=1&base.indepth=false&base.hireable=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&config.timezone=Europe%2FMonaco">
+ </p>
+</div>
 
