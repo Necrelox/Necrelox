@@ -48,7 +48,9 @@ Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des pr
 | Web  | Desktop  | Mobile |
 |---   |---       |---|
 |<a href="https://reactjs.org/">![React](https://img.shields.io/badge/-React-181717?style=flat-square&logo=React)</a>|<a href="https://www.sfml-dev.org/index-fr.php">![SFML](https://img.shields.io/badge/-SFML-181717?style=flat-square&logo=SFML)</a>|<a href="https://reactnative.dev/">![React-Native](https://img.shields.io/badge/-React_Native-181717?style=flat-square&logo=React)</a>   |
-|      |<a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)</a>|   |
+|<a href="https://vuejs.org/">![VueJS](https://img.shields.io/badge/-VueJs-181717?style=flat-square&logo=Vue.Js)|<a href="https://26.customprotocol.com/csfml/">![CSFML](https://img.shields.io/badge/-CSFML-181717?style=flat-square&logo=SFML)</a>|
+|<a href="https://angular.io/">![Angular](https://img.shields.io/badge/-Angular-181717?style=flat-square&logo=Angular)||
+
 
 
 ####  Pas vu énormement (mais ils sont interessant)
