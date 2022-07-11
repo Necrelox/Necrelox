@@ -21,7 +21,7 @@ J'aime bien faire un peu n'importe quoi, ça peut être des programmes étranges
 
 ### Mon Github :
 
-Vous y trouverez, plein de choses plus ou moins étrange :
+Vous y trouverez, plein de choses plus ou moins étranges :
 - Des projets scolaires
 - Des projets personnels
  
