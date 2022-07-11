@@ -80,7 +80,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 <a href="https://cutter.re/">![Cutter](https://img.shields.io/badge/Cutter--181717?style=flat-square)</a>
 
 #### Langages
-##### Utilisé le plus
+##### Le plus utilisé
 ![C](https://img.shields.io/badge/-C%20-181717?style=flat-square&logo=C)
 ![CPP](https://img.shields.io/badge/-C++%20-181717?style=flat-square&logo=C%2B%2B)
 <a href="https://www.arduino.cc/">![Arduino](https://img.shields.io/badge/-Arduino-181717?style=flat-square&logo=Arduino)</a>
