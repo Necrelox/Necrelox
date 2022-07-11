@@ -54,10 +54,10 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 
 
 ####  Pas vues énormement (mais elles sont interessantes)
-| Web  | Desktop  | Mobile |
-|---   |---       |---|
+| Web  | Desktop  |
+|---   |---       |
 |<a href="https://spring.io/">![Spring](https://img.shields.io/badge/-Spring-181717?style=flat-square&logo=Spring)</a>|<a href="https://www.qt.io/">![Qt](https://img.shields.io/badge/-Qt-181717?style=flat-square&logo=Qt)</a>||
-||<a href="https://www.libsdl.org/">![SDL2](https://img.shields.io/badge/SDL2--181717?style=flat-square)</a>||
+||<a href="https://www.libsdl.org/">![SDL2](https://img.shields.io/badge/SDL2--181717?style=flat-square)</a>|
 
 #### Outils
 
