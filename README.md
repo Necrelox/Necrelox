@@ -65,7 +65,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 <a href="https://code.visualstudio.com/">![VSCODE](https://img.shields.io/badge/Visual_Studio_Code-181717?style=flat-square&logo=visualstudiocode)</a>
 <a href="https://www.jetbrains.com/clion/">![CLion](https://img.shields.io/badge/CLion-181717?style=flat-square&logo=CLion)</a>
 <a href="https://www.jetbrains.com/idea/">![IntellJ](https://img.shields.io/badge/IntellJ-181717?style=flat-square&logo=Intellijidea)</a>
-##### Logiciel de virtualisation déjà touché
+##### Logiciels de virtualisation déjà touchés
 <a href="https://www.vmware.com/fr.html">![VMWARE](https://img.shields.io/badge/-VMware-181717?style=flat-square&logo=VMware)</a>
 <a href="https://www.virtualbox.org/">![VirtualBox](https://img.shields.io/badge/-VirtualBox-181717?style=flat-square&logo=VirtualBox)</a>
 
