@@ -110,7 +110,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
  
 > Je peux aussi faire un profilage de code en C et C++ et je peux certainement m'en sortir dans d'autres langages si nécessaire.
 
-### Système d'exploitation utilisé :
+### Systèmes d'exploitation utilisés :
 
 #### Actuel
 <a href="https://ubuntu.com/">![Ubuntu20.04](https://img.shields.io/badge/-Ubuntu_20.4%20-181717?style=flat-square&logo=ubuntu)</a>
