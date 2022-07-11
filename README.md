@@ -124,10 +124,10 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 ##### Interface graphique préférée
 - KDE (Si vous avez besoin d'explications, contactez-moi et je vous prouverai que Gnome est un désastre)
 
-### Reseau
+### Réseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
 
 ### Mini Todo
-- [ ] tout les readme à jours (va falloir êtres giga patient)
+- [ ] Les readme sont à jours (va falloir êtres giga patient)
 - [ ] un nouveau projet avec des threads en Js / NodeJs va être ajouté
 
