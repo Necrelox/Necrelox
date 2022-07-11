@@ -128,6 +128,6 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
 
 ### Mini Todo
-- [ ] Les readme sont à jours (va falloir êtres giga patient)
+- [ ] Les readme sont à jour (va falloir êtres giga patient)
 - [ ] un nouveau projet avec des threads en Js / NodeJs va être ajouté
 
