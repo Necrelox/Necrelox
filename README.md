@@ -122,7 +122,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 <a href="https://getfedora.org/fr/">![Fedora](https://img.shields.io/badge/-Fedora%20-181717?style=flat-square&logo=fedora)<a/>
 
 ##### Interface graphique préférée
-- KDE (Si vous avez besoin d'explications, contactez-moi et je vous prouverez que Gnome est un désastre)
+- KDE (Si vous avez besoin d'explications, contactez-moi et je vous prouverai que Gnome est un désastre)
 
 ### Reseau
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox%230856-181717?style=flat-square&logo=discord)<a/>
