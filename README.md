@@ -121,7 +121,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 <a href="https://kubuntu.org/">![Kubuntu](https://img.shields.io/badge/-Kubuntu%20-181717?style=flat-square&logo=kubuntu)<a/>
 <a href="https://getfedora.org/fr/">![Fedora](https://img.shields.io/badge/-Fedora%20-181717?style=flat-square&logo=fedora)<a/>
 
-##### Interface graphique préféré
+##### Interface graphique préférée
 - KDE (Si vous avez besoin d'explication, contactez-moi et je vous prouverez que Gnome est un désastre)
 
 ### Reseau
