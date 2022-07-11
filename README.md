@@ -17,15 +17,15 @@
 
 Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice,
 
-J'aime bien faire un peu n'importe quoi, ça peut être des programmes étranges à des utilitaires ou même de vrai projets.
+J'aime bien faire un peu n'importe quoi, ça peut être des programmes étranges à des utilitaires, ou même de vrai projets.
 
 ### Mon Github :
 
-Sur mon github vous y trouverez, plein de choses plus ou moins étrange :
+Vous y trouverez, plein de choses plus ou moins étrange :
 - Des projets scolaires
-- Des projets personnelles
+- Des projets personnels
  
-Ces projets, ne reflètent pas mon niveau actuel dans les technologies utilisés, certains sont même des brouillons, ou de vieux projet.
+Ces projets, ne reflètent pas mon niveau actuel dans les technologies utilisées, certains sont même des brouillons, ou de vieux projets.
 Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
 Vous y trouverez de tout et n'importe quoi certains readme sont à faire !
