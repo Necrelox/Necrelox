@@ -34,7 +34,7 @@ Je vous demande un peu de patience, je suis sur plein de fronts en même temps !
 
 N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plusieurs projets. (Vous avez mes réseaux plus bas :wink: )
 
-### Les techno que j'ai abordé :
+### Les techno que j'ai abordées :
 
 #### Versionnage
 | Outil  | UI  | Platforme |
