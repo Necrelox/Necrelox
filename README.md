@@ -17,7 +17,7 @@
 
 Je me présente, je m'appelle Nicolas, je suis étudiant à Epitech à Nice,
 
-J'aime bien faire un peu n'importe quoi ça peut être des programmes étranges à des utilitaires ou même de vrai projets.
+J'aime bien faire un peu n'importe quoi, ça peut être des programmes étranges à des utilitaires ou même de vrai projets.
 
 ### Mon Github :
 
