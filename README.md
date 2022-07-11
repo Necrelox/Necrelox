@@ -43,7 +43,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
  
 #### Librairie ou framework (Web / Desktop / Mobile)
 
-##### Vue pas mal de fois
+##### Vues pas mal de fois
 
 | Web  | Desktop  | Mobile |
 |---   |---       |---|
@@ -53,7 +53,7 @@ N'hésitez pas à me contacter si vous souhaitez que je vous explique un ou plus
 
 
 
-####  Pas vu énormement (mais ils sont interessant)
+####  Pas vues énormement (mais elles sont interessantes)
 | Web  | Desktop  | Mobile |
 |---   |---       |---|
 |<a href="https://spring.io/">![Spring](https://img.shields.io/badge/-Spring-181717?style=flat-square&logo=Spring)</a>|<a href="https://www.qt.io/">![Qt](https://img.shields.io/badge/-Qt-181717?style=flat-square&logo=Qt)</a>||
