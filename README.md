@@ -30,7 +30,7 @@ Malgré tout, je tiens à les laisser pour me rappeler de mon avancée :grin:.
 
 Vous y trouverez de tout et n'importe quoi certains readme sont à faire !
 
-Je vous demande un peu de patience, je suis sur plein de front en même temps !
+Je vous demande un peu de patience, je suis sur plein de fronts en même temps !
 
 Hésitez pas à me contacter si vous souhaitez que je vous explique un ou des projets. (Vous avez mes réseaux plus bas :wink: )
 
