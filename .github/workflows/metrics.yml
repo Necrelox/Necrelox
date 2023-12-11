@@ -1,0 +1,85 @@
+name: Metrics
+run-name: Metrics
+on:
+  schedule: [{cron: "0 * * * *"}]
+  workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Achievements
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: achievements.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          output_action: commit
+          committer_branch: output
+          committer_message: "chore: update metrics"
+          plugin_achievements: yes
+          plugin_fortune: yes
+          retries: 3
+          retries_delay: 300
+
+      - name: Starred Topics
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: starred-topics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          output_action: commit
+          committer_branch: output
+          committer_message: "chore: update metrics"
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_sort: activity
+
+      - name: Featured Pinned
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: pinned-feature.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          output_action: commit
+          committer_branch: output
+          committer_message: "chore: update metrics"
+          plugin_repositories: yes
+          plugin_repositories_featured: Basalt-Lab/basalt-doc,Basalt-Lab/basalt-socket,Basalt-Lab/basalt-logger,Basalt-Lab/basalt-helper,Basalt-Lab/basalt-auth
+
+      - name: Languages
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          output_action: commit
+          committer_branch: output
+          committer_message: "chore: update metrics"
+          plugin_languages: yes
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_ignored: vue, dart, html, css, dockerfile, makefile, cmake
+          plugin_languages_limit: 5
+
+      - name: Information
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: informations.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          output_action: commit
+          committer_branch: output
+          committer_message: "chore: update metrics"
+          template: classic
+          base: header, activity, community, repositories
+          base_indepth: yes
+          plugin_people: yes
+          plugin_people_limit: 24
+          plugin_people_size: 24
+          plugin_people_types: followers, following
