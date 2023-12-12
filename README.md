@@ -1,16 +1,32 @@
-### Hi there 👋
+[![snk](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)](https://raw.githubusercontent.com/Necrelox/Necrelox/output/github-contribution-grid-snake.svg)
 
-<!--
-**Necrelox/Necrelox** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[<img align="right" width="150" alt="" src="https://count.getloli.com/get/@:necrelox?theme=rule34">]()
 
-Here are some ideas to get you started:
+[<img align="left" width="47%" alt="" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/informations.svg">](#)
+[<img align="right" width="47%" alt="" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/achievements.svg">](#)
+[<img align="left" width="47%" alt="" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/languages.svg">](#)
+[<img align="left" width="47%" alt="" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/starred-topics.svg">](#)
+[<img align="left" width="47%" alt="" src="https://raw.githubusercontent.com/Necrelox/Necrelox/output/pinned-feature.svg">](#)
+[<img width="100%" height="1px" alt="">](#)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Welcome to My GitHub Profile
+
+This profile is a diverse showcase of my programming journey, where you can explore:
+
+- **School Projects**: Works carried out during my studies that demonstrate my learning process.
+- **Personal Projects**: Personal initiatives.
+
+The projects here vary in levels of completion.
+They reflect my development over time and not necessarily my current level of skill in the technologies used.
+I keep them as a journal.
+
+## Current Engagements
+
+I am actively involved in two organizations:
+
+- [Basalt-Lab](https://github.com/Basalt-Lab): A set of Node.js packages designed to simplify API development. (Started in September 2023)
+- [Andesite-Lab](https://github.com/Andesite-Lab): A microservices project for a modular and scalable API architecture. (Started in December 2023)
+
+### Network
+<a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox-181717?style=flat-square&logo=discord)</a>
+
