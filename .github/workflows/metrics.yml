@@ -50,7 +50,7 @@ jobs:
           committer_branch: output
           committer_message: "chore: update metrics"
           plugin_repositories: yes
-          plugin_repositories_featured: Basalt-Lab/basalt-doc,Basalt-Lab/basalt-socket,Basalt-Lab/basalt-logger,Basalt-Lab/basalt-helper,Basalt-Lab/basalt-auth
+          plugin_repositories_featured: Basalt-Lab/basalt-doc,Basalt-Lab/basalt-logger,Basalt-Lab/basalt-helper
 
       - name: Languages
         if: ${{ success() || failure() }}
