@@ -22,10 +22,9 @@ I keep them as a journal.
 
 ## Current Engagements
 
-I am actively involved in two organizations:
+I am actively involved in my organization:
 
-- [Basalt-Lab](https://github.com/Basalt-Lab): A set of Node.js packages designed to simplify API development. (Started in September 2023)
-- [Andesite-Lab](https://github.com/Andesite-Lab): A microservices project for a modular and scalable API architecture. (Started in December 2023)
+- [Basalt-Lab](https://github.com/Basalt-Lab): A set of **Bun** packages designed to simplify API development. (Started in September 2023)
 
 ### Network
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox-181717?style=flat-square&logo=discord)</a>
