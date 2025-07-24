@@ -20,12 +20,6 @@ The projects here vary in levels of completion.
 They reflect my development over time and not necessarily my current level of skill in the technologies used.
 I keep them as a journal.
 
-## Current Engagements
-
-I am actively involved in my organization:
-
-- [Basalt-Lab](https://github.com/Basalt-Lab): A set of **Bun** packages designed to simplify API development. (Started in September 2023)
-
 ### Network
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox-181717?style=flat-square&logo=discord)</a>
 
