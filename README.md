@@ -23,3 +23,4 @@ I keep them as a journal.
 ### Network
 <a href="https://discord.com/">![discord](https://img.shields.io/badge/-Necrelox-181717?style=flat-square&logo=discord)</a>
 
+*My new GitHub account => [Komiriko](https://github.com/Komiriko)*
