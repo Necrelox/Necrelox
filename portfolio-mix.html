@@ -1,0 +1,328 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Necrelox Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400;500;700&display=swap">
+<style>
+/* Layout: a quiet single column (text, an index, one figure) over a fixed field of characters. Monochrome; only the characters move. */
+:root{
+  --bg:#f3f4f4; --fg:#141516; --dim:#63676b; --faint:#b4b8bb; --ghost:#d6d9db; --line:#dadddf;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#0f1011; --fg:#dedfdb; --dim:#8c9094; --faint:#4a4e52; --ghost:#26292c; --line:#25282a; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#0f1011; --fg:#dedfdb; --dim:#8c9094; --faint:#4a4e52; --ghost:#26292c; --line:#25282a; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.page{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding-block:20px 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:clamp(56px,9vw,104px)}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+pre{margin:0;font-family:var(--mono);white-space:pre;overflow:hidden;max-width:100%}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.halo{text-shadow:0 0 8px var(--bg),0 0 8px var(--bg),0 0 3px var(--bg)}
+.dim{color:var(--dim)}
+
+nav{display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:12.5px}
+nav a{text-decoration:none} nav ul{display:flex;gap:clamp(12px,3vw,26px);list-style:none;margin:0;padding:0}
+nav ul a{color:var(--dim)} nav ul a:hover{color:var(--fg);text-decoration:underline}
+
+.hero{display:flex;flex-direction:column;gap:22px}
+#name{display:block;width:100%;touch-action:pan-y;margin-top:clamp(10px,4vw,44px)}
+.lede{font-size:clamp(21px,2.9vw,29px);line-height:1.27;letter-spacing:-.015em;margin:0;max-width:24ch;text-wrap:balance}
+.hero .mono{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin:0}
+
+section>h2{font-family:var(--mono);font-size:13px;font-weight:500;margin:0 0 16px}
+section>h2::before{content:"## ";color:var(--faint);font-weight:400}
+.prose p{margin:0 0 12px;max-width:56ch}
+.rule{font-size:12.5px;color:var(--faint);margin-bottom:22px}
+
+.ix{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px 48px;align-items:start}
+.list{display:flex;flex-direction:column;border-top:1px solid var(--line);background:var(--bg)}
+.list button{display:grid;grid-template-columns:5ch minmax(0,1.1fr) 6ch minmax(0,1.2fr);gap:10px;text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);color:var(--dim);font-variant-numeric:tabular-nums}
+.list button .n{color:var(--fg)}
+.list button[aria-selected="true"]{color:var(--fg)}
+.list button[aria-selected="true"] .n{font-weight:500}
+.list button[aria-selected="true"] .n::after{content:"  ←";color:var(--dim);font-weight:400}
+.list .s{font-family:var(--mono);font-size:12.5px;align-self:center}
+figure{margin:0;position:sticky;top:20px;display:flex;flex-direction:column;gap:10px;align-items:center}
+figure pre{font-size:clamp(8px,1.02vw,10.5px);line-height:1.15}
+figcaption{font-family:var(--mono);font-size:12px;color:var(--dim);align-self:stretch;border-top:1px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:2px}
+figcaption b{font-weight:500;color:var(--fg)}
+
+.plain{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:13.5px;line-height:1.9}
+.plain.dash li::before{content:"- ";color:var(--faint)}
+.plain .k{color:var(--faint)}
+footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+
+.modes{position:fixed;z-index:5;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:14px;background:var(--bg);border:1px solid var(--line);padding:5px 10px;font-family:var(--mono);font-size:12px}
+.modes span{color:var(--faint)} .modes button{color:var(--dim)}
+.modes button[aria-pressed="true"]{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:760px){ .ix{grid-template-columns:minmax(0,1fr)} figure{position:static;order:-1} figure pre{font-size:8.5px} .list button{grid-template-columns:5ch minmax(0,1fr) 6ch} .list .s{display:none} .modes span{display:none} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<div class="page">
+  <header class="hero">
+    <nav aria-label="Sections" class="halo">
+      <a href="#haut" id="haut">necrelox</a>
+      <ul><li><a href="#a-propos">à propos</a></li><li><a href="#projets">projets</a></li><li><a href="#liens">liens</a></li></ul>
+    </nav>
+    <h1 class="sr">Necrelox</h1>
+    <canvas id="name" aria-hidden="true"></canvas>
+    <p class="lede halo">Développeur. Projets d'école et projets perso, gardés ici comme un journal.</p>
+    <p class="mono halo">màj 2026-11-20 · bouge le curseur, clique, passe sur le nom</p>
+  </header>
+
+  <section id="a-propos" class="prose halo">
+    <h2>à propos</h2>
+    <p>Ce profil est le journal de mon parcours en programmation : des projets d'école et des projets perso, à différents stades d'avancement.</p>
+    <p class="dim">Ils montrent mon évolution dans le temps, pas forcément mon niveau actuel. Je les garde tous.</p>
+  </section>
+
+  <section id="projets">
+    <h2 class="halo">projets <span class="dim">(exemples)</span></h2>
+    <div class="ix">
+      <div class="list" role="listbox" aria-label="Projets" id="list"></div>
+      <figure><pre id="art" aria-hidden="true"></pre><figcaption class="halo"><span id="cap"></span><b id="desc"></b></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="halo">
+    <h2>en ce moment <span class="dim">(exemple)</span></h2>
+    <ul class="plain dash"><li>je réécris mon minishell pour apprendre Rust</li><li>je lis « Crafting Interpreters »</li><li>je range mes dotfiles, encore</li></ul>
+  </section>
+
+  <section id="liens" class="halo">
+    <h2>liens</h2>
+    <ul class="plain"><li><span class="k">[1]</span> <a href="https://github.com/Necrelox" target="_blank" rel="noopener">github.com/Necrelox</a></li><li><span class="k">[2]</span> discord : <span id="discord">Necrelox</span> <button id="copy" class="dim">[copier]</button></li></ul>
+  </section>
+
+  <div>
+    <pre class="rule" id="rule" aria-hidden="true"></pre>
+    <footer class="halo">Écrit à la main. Une page html, zéro dépendance, zéro traqueur.</footer>
+  </div>
+</div>
+
+<div class="modes" role="group" aria-label="Effet du fond">
+  <span>fond</span>
+  <button data-m="braise" aria-pressed="true">braise</button>
+  <button data-m="loupe" aria-pressed="false">loupe</button>
+  <button data-m="onde" aria-pressed="false">onde</button>
+</div>
+
+<script>
+(() => {
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const RAMP = ' .·:-=+*#%@', RAMP2 = ' .:-=+*#%@';
+const MONO = '"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace';
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+
+/* ---------- colors from the CSS tokens ---------- */
+let C = {};
+const readColors = () => { const s = getComputedStyle(document.documentElement); for (const k of ['fg','dim','faint','ghost']) C[k] = s.getPropertyValue('--' + k).trim(); };
+readColors();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', readColors);
+new MutationObserver(readColors).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+
+/* ---------- pointer, with a wandering ghost when nobody moves ---------- */
+let mx = -999, my = -999, lastMove = -1e9, PX = -999, PY = -999, still = true;
+const rings = [];
+addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; lastMove = performance.now(); }, {passive:true});
+addEventListener('pointerdown', e => { mx = e.clientX; my = e.clientY; lastMove = performance.now(); rings.push({x:mx, y:my, t0:performance.now()/1000, a:1.5}); }, {passive:true});
+
+/* ---------- text → coverage grid ---------- */
+function textMask(text, cols, stretch){
+  const cw = 6, ch = 12, W = cols * cw, F = '900 100px "Arial Black","Helvetica Neue",Impact,Arial,sans-serif';
+  const t = document.createElement('canvas').getContext('2d'); t.font = F;
+  const m = t.measureText(text), asc = m.actualBoundingBoxAscent || 72, desc = m.actualBoundingBoxDescent || 0;
+  const left = m.actualBoundingBoxLeft || 0, wpx = (m.actualBoundingBoxRight + left) || m.width;
+  const s = W / wpx, rows = Math.max(3, Math.round((asc + desc) * s * stretch / ch)), H = rows * ch;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d', {willReadFrequently:true});
+  x.fillStyle = '#fff'; x.font = F; x.setTransform(s, 0, 0, H / (asc + desc), 0, 0); x.fillText(text, left, asc);
+  const d = x.getImageData(0, 0, W, H).data, out = [];
+  for (let r = 0; r < rows; r++){ const row = [];
+    for (let q = 0; q < cols; q++){ let a = 0;
+      for (let yy = 0; yy < ch; yy += 2) for (let xx = 0; xx < cw; xx += 2) a += d[((r*ch+yy)*W + q*cw+xx)*4 + 3];
+      row.push(a / (255 * 18)); } out.push(row); }
+  return out;
+}
+function nameMask(cols, stretch){
+  if (cols >= 70) return textMask('NECRELOX', cols, stretch);
+  return [...textMask('NECR', cols, stretch * .6), new Array(cols).fill(0), new Array(cols).fill(0), ...textMask('ELOX', cols, stretch * .6)];
+}
+
+/* ================= background field ================= */
+const bg = $('#bg'), bx = bg.getContext('2d');
+let BW, BH, cw, ch = 18, cols, rows, heat, heat2, mode = 'braise', ppc = null, ppr = null, ringX = 0, ringY = 0;
+const CODE = "const moi = { nom: 'necrelox', journal: [ecole, perso] }; while (vivant) { apprendre(); coder(); casser(); recommencer(); } /* tu as trouvé le texte caché */ export default moi; ";
+function sizeBg(){
+  const dpr = Math.min(2, devicePixelRatio || 1); BW = innerWidth; BH = innerHeight;
+  bg.width = BW * dpr; bg.height = BH * dpr; bx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  bx.font = '500 13px ' + MONO; bx.textBaseline = 'top'; cw = bx.measureText('M').width || 8;
+  cols = Math.ceil(BW / cw); rows = Math.ceil(BH / ch); heat = new Float32Array(cols * rows); heat2 = new Float32Array(cols * rows); ppc = null;
+}
+function deposit(c0, r0, c1, r1){
+  const n = Math.max(1, Math.ceil(Math.hypot(c1 - c0, (r1 - r0) * 2)));
+  for (let s = 0; s <= n; s++){ const cc = c0 + (c1 - c0) * s / n, rr = r0 + (r1 - r0) * s / n;
+    for (let dy = -3; dy <= 3; dy++) for (let dx = -6; dx <= 6; dx++){
+      const c = Math.round(cc) + dx, r = Math.round(rr) + dy; if (c < 0 || r < 0 || c >= cols || r >= rows) continue;
+      const i = r * cols + c; heat[i] = Math.min(1.5, heat[i] + Math.exp(-(dx*dx*.22 + dy*dy*.8)) * .3 / Math.sqrt(n)); } }
+}
+function frameBg(t){
+  const pc = PX / cw, pr = PY / ch;
+  if (mode === 'braise'){
+    if (ppc !== null && PX > -900) deposit(ppc, ppr, pc, pr);
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++){ const i = r * cols + c;
+      heat2[i] = (heat[i] * .5 + (r < rows - 1 ? heat[i + cols] : 0) * .32 + ((c > 0 ? heat[i-1] : 0) + (c < cols - 1 ? heat[i+1] : 0)) * .09) * (.93 + Math.random() * .04); }
+    [heat, heat2] = [heat2, heat];
+  }
+  ppc = pc; ppr = pr;
+  if (mode === 'onde' && PX > -900 && Math.hypot(PX - ringX, PY - ringY) > 90){ ringX = PX; ringY = PY; rings.push({x:PX, y:PY, t0:t, a:.9}); }
+  while (rings.length && t - rings[0].t0 > 2.4) rings.shift();
+  if (rings.length > 14) rings.splice(0, rings.length - 14);
+
+  bx.clearRect(0, 0, BW, BH);
+  let last = '';
+  const set = col => { if (col !== last) { bx.fillStyle = col; last = col; } };
+  for (let r = 0; r < rows; r++){
+    const y = r * ch, sr = Math.sin(r * .17 - t * .2) * 1.5, s2 = r * .13 + t * .25;
+    for (let c = 0; c < cols; c++){
+      const i = r * cols + c; let v = 0;
+      if (mode === 'braise') v = heat[i];
+      else if (mode === 'loupe'){ const dx = (c - pc) * cw / ch, dy = r - pr, d = Math.sqrt(dx*dx + dy*dy); if (d < 11){ v = 1 - d / 11; v = v * v * (3 - 2 * v) * 1.05; } }
+      for (let k = 0; k < rings.length; k++){ const g = rings[k], age = t - g.t0, dx = (c * cw - g.x) / ch, dy = r - g.y / ch, w = Math.sqrt(dx*dx + dy*dy) - age * 22;
+        if (w > -3 && w < 3) v += Math.exp(-w * w * .6) * (1 - age / 2.4) * g.a; }
+      let chr;
+      if (mode === 'loupe'){
+        chr = CODE[i % CODE.length]; if (chr === ' ') continue;
+        if (v < .08) { set(C.ghost); bx.fillText(chr, c * cw, y); continue; }
+      } else {
+        const n = Math.sin(c * .11 + t * .3 + sr) * Math.sin(s2 + c * .03);
+        const tot = v + (n > .62 ? (n - .62) * .55 : 0);
+        if (tot < .05) continue;
+        chr = RAMP[clamp(1 + (tot * 9 | 0), 1, 10)]; if (v < .2) { set(C.ghost); bx.fillText(chr, c * cw, y); continue; }
+      }
+      set(v < .45 ? C.faint : v < .85 ? C.dim : C.fg); bx.fillText(chr, c * cw, y);
+    }
+  }
+}
+
+/* ================= the name as particles ================= */
+const nm = $('#name'), nx = nm.getContext('2d');
+let parts = [], NW, NH, hw, hh = 12;
+function buildName(){
+  const dpr = Math.min(2, devicePixelRatio || 1); NW = nm.parentElement.clientWidth;
+  nx.font = '700 11px ' + MONO; hw = nx.measureText('M').width || 6.6;
+  const cols = Math.floor(NW / hw), mask = nameMask(cols, 2), pad = 3;
+  NH = (mask.length + pad * 2) * hh; nm.style.height = NH + 'px'; nm.width = NW * dpr; nm.height = NH * dpr;
+  nx.setTransform(dpr, 0, 0, dpr, 0, 0); nx.font = '700 11px ' + MONO; nx.textBaseline = 'top';
+  const ox = (NW - cols * hw) / 2; parts = [];
+  mask.forEach((row, r) => row.forEach((v, c) => { if (v < .16) return;
+    const hx = ox + c * hw, hy = (r + pad) * hh;
+    parts.push({hx, hy, x: RM ? hx : hx + (Math.random() - .5) * NW * 1.2, y: RM ? hy : hy + (Math.random() - .5) * 700, vx: 0, vy: 0, g: ':+*#%@'[clamp(v * 6 | 0, 0, 5)]}); }));
+}
+function frameName(t){
+  const rect = nm.getBoundingClientRect(); if (rect.bottom < -50 || rect.top > innerHeight + 50) return;
+  const px = PX - rect.left, py = PY - rect.top, R = 95;
+  nx.clearRect(0, 0, NW, NH); let last = '';
+  for (let i = 0; i < parts.length; i++){ const p = parts[i];
+    const ty = p.hy + Math.sin(t * 1.4 + p.hx * .012) * 1.6, dx = p.x - px, dy = p.y - py, d2 = dx*dx + dy*dy;
+    if (d2 < R * R){ const d = Math.sqrt(d2) || 1, f = (1 - d / R); p.vx += dx / d * f * f * 7; p.vy += dy / d * f * f * 7; }
+    p.vx = (p.vx + (p.hx - p.x) * .055) * .86; p.vy = (p.vy + (ty - p.y) * .055) * .86; p.x += p.vx; p.y += p.vy;
+    const off = Math.abs(p.x - p.hx) + Math.abs(p.y - ty), col = off < 3 ? C.fg : off < 26 ? C.dim : C.faint;
+    if (col !== last){ nx.fillStyle = col; last = col; }
+    nx.fillText(off > 40 ? '·' : off > 14 ? '+' : p.g, p.x, p.y); }
+}
+
+/* ================= index + ray-marched solids ================= */
+const SDF = {
+  'sphère':   (x, y, z) => Math.hypot(x, y, z) - 1,
+  'cube':     (x, y, z) => { const a = Math.abs(x) - .72, b = Math.abs(y) - .72, c = Math.abs(z) - .72; return Math.hypot(Math.max(a, 0), Math.max(b, 0), Math.max(c, 0)) + Math.min(Math.max(a, b, c), 0) - .06; },
+  'tore':     (x, y, z) => Math.hypot(Math.hypot(x, z) - .82, y) - .36,
+  'octaèdre': (x, y, z) => (Math.abs(x) + Math.abs(y) + Math.abs(z) - 1.25) * .577,
+  'cylindre': (x, y, z) => { const a = Math.hypot(x, z) - .68, b = Math.abs(y) - .9; return Math.min(Math.max(a, b), 0) + Math.hypot(Math.max(a, 0), Math.max(b, 0)); },
+  'gyroïde':  (x, y, z) => Math.max(Math.hypot(x, y, z) - 1.15, (Math.abs(Math.sin(3.2*x)*Math.cos(3.2*y) + Math.sin(3.2*y)*Math.cos(3.2*z) + Math.sin(3.2*z)*Math.cos(3.2*x)) - .28) / 4.6),
+};
+function solid(fa, fb, m, ay, ax, W, H){
+  const cy = Math.cos(ay), sy = Math.sin(ay), cx = Math.cos(ax), sx = Math.sin(ax);
+  const rot = (x, y, z) => { const x1 = x * cy + z * sy, z1 = -x * sy + z * cy; return [x1, y * cx - z1 * sx, y * sx + z1 * cx]; };
+  const X = rot(1, 0, 0), Y = rot(0, 1, 0), D = rot(0, 0, 1), L = rot(-.5, -.62, -.6);
+  const f = m <= 0 ? fa : m >= 1 ? fb : (x, y, z) => fa(x, y, z) * (1 - m) + fb(x, y, z) * m;
+  const sc = 1.62 / (H / 2), e = .012; let out = '';
+  for (let r = 0; r < H; r++){ const v = (r - H / 2 + .5) * sc;
+    for (let c = 0; c < W; c++){ const u = (c - W / 2 + .5) * sc * .52;
+      const ox = u * X[0] + v * Y[0] - 3 * D[0], oy = u * X[1] + v * Y[1] - 3 * D[1], oz = u * X[2] + v * Y[2] - 3 * D[2];
+      let t = 1.3, hit = false, px, py, pz;
+      for (let k = 0; k < 30 && t < 4.7; k++){ px = ox + D[0] * t; py = oy + D[1] * t; pz = oz + D[2] * t; const d = f(px, py, pz); if (d < .014){ hit = true; break; } t += d * .85; }
+      if (!hit){ out += ' '; continue; }
+      const d0 = f(px, py, pz), nx = f(px + e, py, pz) - d0, ny = f(px, py + e, pz) - d0, nz = f(px, py, pz + e) - d0, nl = Math.hypot(nx, ny, nz) || 1;
+      out += RAMP2[clamp((Math.max(0, (nx * L[0] + ny * L[1] + nz * L[2]) / nl) * .88 + .12) * 10 | 0, 1, 9)]; }
+    if (r < H - 1) out += '\n'; }
+  return out;
+}
+const P = [
+  {id:'portfolio',   kind:'perso', year:2026, stack:'html css js',           solid:'gyroïde',  desc:'Ce site, écrit à la main.'},
+  {id:'raytracer',   kind:'école', year:2025, stack:'c++',                   solid:'sphère',   desc:'Rendu 3D par lancer de rayons, écrit de zéro.'},
+  {id:'bot-discord', kind:'perso', year:2025, stack:'typescript node',       solid:'tore',     desc:'Un bot pour gérer un serveur entre amis.'},
+  {id:'minishell',   kind:'école', year:2024, stack:'c',                     solid:'cube',     desc:'Un shell Unix minimal : pipes, redirections, variables.'},
+  {id:'api-auth',    kind:'perso', year:2024, stack:'typescript postgresql', solid:'octaèdre', desc:"Une API d'authentification avec sessions et rôles."},
+  {id:'dotfiles',    kind:'perso', year:2024, stack:'shell lua',             solid:'cylindre', desc:'Ma configuration : shell, éditeur, raccourcis.'},
+];
+const list = $('#list'), art = $('#art');
+list.innerHTML = P.map((p, i) => `<button role="option" data-i="${i}"><span>${p.year}</span><span class="n">${p.id}</span><span>${p.kind}</span><span class="s">${p.stack}</span></button>`).join('');
+const rowsEl = [...list.children]; let sa = 0, sb = 0, sm = 1, SW = 64, SH = 32;
+const pick = i => { if (i !== sb){ sa = sb; sb = i; sm = RM ? 1 : 0; }
+  rowsEl.forEach((r, k) => r.setAttribute('aria-selected', k === i));
+  $('#cap').textContent = `fig. ${i + 1} — ${P[i].solid}`; $('#desc').textContent = P[i].desc;
+  if (RM) art.textContent = solid(SDF[P[sb].solid], SDF[P[sb].solid], 1, .6, .5, SW, SH); };
+rowsEl.forEach(r => { const go = () => pick(+r.dataset.i); r.addEventListener('pointerenter', go); r.addEventListener('focus', go); r.addEventListener('click', go); });
+function frameSolid(t, dt){
+  const b = art.getBoundingClientRect(); if (b.bottom < 0 || b.top > innerHeight) return;
+  if (sm < 1) sm = Math.min(1, sm + dt * 2.2);
+  const ux = still ? 0 : mx / innerWidth - .5, uy = still ? 0 : my / innerHeight - .5, em = sm * sm * (3 - 2 * sm);
+  art.textContent = solid(SDF[P[sa].solid], SDF[P[sb].solid], em, t * .45 + ux * 1.6, .5 + uy * 1.1, SW, SH);
+}
+
+/* ================= small things ================= */
+const rule = $('#rule');
+function frameRule(t){ const b = rule.getBoundingClientRect(); if (b.bottom < 0 || b.top > innerHeight) return;
+  const n = Math.max(8, Math.floor(b.width / 7.55)), pc = still ? (t * 16) % (n + 30) - 15 : (mx - b.left) / 7.55, prox = still ? .7 : clamp(1.15 - Math.abs(my - b.top) / 170, 0, 1);
+  let s = ''; for (let i = 0; i < n; i++){ const a = prox * Math.exp(-((i - pc) ** 2) / 26); s += a > .62 ? '#' : a > .25 ? '=' : '-'; } rule.textContent = s; }
+$('#copy').addEventListener('click', async e => { const b = e.currentTarget;
+  try { await navigator.clipboard.writeText('Necrelox'); b.textContent = '[copié]'; }
+  catch { const r = document.createRange(); r.selectNodeContents($('#discord')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '[sélectionné]'; }
+  setTimeout(() => b.textContent = '[copier]', 1500); });
+$('.modes').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; mode = b.dataset.m; heat.fill(0);
+  document.querySelectorAll('.modes button').forEach(x => x.setAttribute('aria-pressed', x === b)); if (RM) frameBg(0); });
+
+/* ================= main loop ================= */
+function layout(){ sizeBg(); buildName(); const small = innerWidth < 520; SW = small ? 46 : 64; SH = small ? 23 : 32; }
+let n = 0, prev = 0;
+function tick(now){
+  requestAnimationFrame(tick); if (document.hidden) return;
+  const t = now / 1000; still = now - lastMove > 2600;
+  if (still){ PX = BW * (.5 + .4 * Math.sin(t * .5)); PY = BH * (.42 + .3 * Math.sin(t * .83 + 1)); } else { PX = mx; PY = my; }
+  frameName(t);
+  if (n % 2 === 0) frameBg(t);
+  if (n % 3 === 0){ const dt = Math.min(.2, t - prev); prev = t; frameSolid(t, dt); frameRule(t); }
+  n++;
+}
+function start(){
+  layout(); pick(1); sm = 1;
+  art.textContent = solid(SDF[P[sb].solid], SDF[P[sb].solid], 1, .6, .5, SW, SH); rule.textContent = '-'.repeat(Math.max(8, Math.floor(rule.parentElement.clientWidth / 7.55)));
+  if (RM){ PX = BW * .7; PY = BH * .3; for (let k = 0; k < 14; k++) deposit(PX / cw - k, PY / ch + k * .4, PX / cw - k - 1, PY / ch + k * .4);
+    frameBg(0); frameName(0); art.textContent = solid(SDF[P[sb].solid], SDF[P[sb].solid], 1, .6, .5, SW, SH); rule.textContent = '-'.repeat(60);
+    addEventListener('pointermove', () => { PX = mx; PY = my; frameBg(0); }, {passive:true}); }
+  else requestAnimationFrame(tick);
+  let lw = innerWidth, rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { if (innerWidth !== lw){ lw = innerWidth; layout(); } else sizeBg(); if (RM){ frameBg(0); frameName(0); } }, 180); });
+}
+let started = false; const once = () => { if (!started){ started = true; start(); } };
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(once); setTimeout(once, 1200);
+})();
+</script>
