@@ -56,10 +56,16 @@ figcaption b{font-weight:500;color:var(--fg)}
 .plain .k{color:var(--faint)}
 footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
 
-.modes{position:fixed;z-index:5;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:14px;background:var(--bg);border:1px solid var(--line);padding:5px 10px;font-family:var(--mono);font-size:12px}
-.modes span{color:var(--faint)} .modes button{color:var(--dim)}
-.modes button[aria-pressed="true"]{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
-.fx{right:auto;left:max(14px,env(safe-area-inset-left,0px))}
+.con{position:fixed;z-index:6;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));width:min(440px,calc(100% - 28px));font-family:var(--mono);font-size:12.5px;display:flex;flex-direction:column}
+.con .out{background:var(--bg);border:1px solid var(--line);border-bottom:0;padding:10px 12px;max-height:min(46vh,340px);overflow-y:auto;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75}
+.con .out button{text-decoration:underline;text-decoration-color:var(--faint);text-underline-offset:4px}
+.con .out button:hover{text-decoration-color:var(--fg)}
+.con .line{display:flex;gap:1ch;align-items:center;background:var(--bg);border:1px solid var(--line);padding:6px 10px;cursor:text}
+.con .line:focus-within{border-color:var(--dim)}
+.con .ps,.con .k{color:var(--dim)} .con .k{border:1px solid var(--line);padding:0 5px}
+#con-in{flex:1;min-width:0;background:none;border:0;outline:0;font:inherit;color:var(--fg);padding:0;caret-color:var(--fg)}
+#con-in::placeholder{color:var(--faint)}
+@media (pointer:coarse){ #con-in{font-size:16px} .con .k{display:none} }
 #veil{position:fixed;inset:0;z-index:4;pointer-events:none}
 #veil.grain{background-size:160px 160px}
 #veil.crt{background:repeating-linear-gradient(to bottom,transparent 0 2px,rgba(0,0,0,.13) 2px 3px),radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.3) 100%)}
@@ -80,7 +86,7 @@ footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
     <h1 class="sr">Necrelox</h1>
     <canvas id="name" aria-hidden="true"></canvas>
     <p class="lede halo">Développeur. Projets d'école et projets perso, gardés ici comme un journal.</p>
-    <p class="mono halo">màj 2026-11-20 · bouge le curseur, clique, passe sur le nom</p>
+    <p class="mono halo">màj 2026-11-20 · bouge le curseur, clique, ou tape <span style="border:1px solid var(--line);padding:0 5px">/</span> pour la console</p>
   </header>
 
   <section id="a-propos" class="prose halo">
@@ -113,17 +119,9 @@ footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
   </div>
 </div>
 
-<div class="modes" role="group" aria-label="Effet du fond">
-  <span>fond</span>
-  <button data-m="braise" aria-pressed="true">braise</button>
-  <button data-m="loupe" aria-pressed="false">loupe</button>
-  <button data-m="onde" aria-pressed="false">onde</button>
-</div>
-<div class="modes fx" role="group" aria-label="Filtre" id="fx">
-  <span>filtre</span>
-  <button data-f="" aria-pressed="true">aucun</button>
-  <button data-f="grain" aria-pressed="false">grain</button>
-  <button data-f="crt" aria-pressed="false">crt</button>
+<div class="con" id="con">
+  <div class="out" id="con-out" hidden aria-live="polite"></div>
+  <label class="line" for="con-in"><span class="ps">~ $</span><input id="con-in" placeholder="help" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Console"><button id="con-x" class="k" hidden>esc</button><span class="k" id="con-k" aria-hidden="true">/</span></label>
 </div>
 <div id="veil" aria-hidden="true"></div>
 
@@ -311,15 +309,48 @@ $('#copy').addEventListener('click', async e => { const b = e.currentTarget;
   try { await navigator.clipboard.writeText('Necrelox'); b.textContent = '[copié]'; }
   catch { const r = document.createRange(); r.selectNodeContents($('#discord')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '[sélectionné]'; }
   setTimeout(() => b.textContent = '[copier]', 1500); });
-$('.modes').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; mode = b.dataset.m; heat.fill(0);
-  document.querySelectorAll('.modes [data-m]').forEach(x => x.setAttribute('aria-pressed', x === b)); if (RM) frameBg(0); });
+function setMode(m){ mode = m; heat.fill(0); if (RM) frameBg(0); }
 let grainUrl = null;
 function makeGrain(){ const c = document.createElement('canvas'); c.width = c.height = 160; const x = c.getContext('2d'), im = x.createImageData(160, 160);
   for (let i = 0; i < im.data.length; i += 4){ const v = Math.random() * 255 | 0; im.data[i] = im.data[i+1] = im.data[i+2] = v; im.data[i+3] = 26; }
   x.putImageData(im, 0, 0); return 'url(' + c.toDataURL() + ')'; }
-$('#fx').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; const veil = $('#veil'); veil.className = b.dataset.f;
-  veil.style.backgroundImage = b.dataset.f === 'grain' ? (grainUrl = grainUrl || makeGrain()) : '';
-  document.querySelectorAll('#fx [data-f]').forEach(x => x.setAttribute('aria-pressed', x === b)); });
+let fx = '';
+function setFx(f){ fx = f; const veil = $('#veil'); veil.className = f; veil.style.backgroundImage = f === 'grain' ? (grainUrl = grainUrl || makeGrain()) : ''; }
+
+/* ================= console: a small prompt, the only terminal on the page ================= */
+const out = $('#con-out'), inp = $('#con-in'), cxb = $('#con-x');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const B = (cmd, label) => `<button data-cmd="${cmd}">${label || cmd}</button>`;
+const row = (cmd, label, desc) => B(cmd, esc(label)) + ' '.repeat(Math.max(2, 16 - label.length)) + `<span class="dim">${desc}</span>`;
+function say(html){ out.hidden = false; cxb.hidden = false; $('#con-k').hidden = true; const d = document.createElement('div'); d.innerHTML = html; out.appendChild(d); out.scrollTop = out.scrollHeight; }
+function closeOut(){ out.hidden = true; cxb.hidden = true; $('#con-k').hidden = false; out.innerHTML = ''; }
+const SECT = {'a-propos':'a-propos', apropos:'a-propos', projets:'projets', liens:'liens', haut:'haut', '~':'haut'};
+const goTo = id => document.getElementById(id).scrollIntoView({behavior: RM ? 'auto' : 'smooth', block:'start'});
+const choice = (cmd, opts, cur) => opts.map(o => B(cmd + ' ' + o, o) + (o === cur ? '*' : '')).join('  ');
+function run(raw){
+  const line = raw.trim(); if (!line) return;
+  const [c, ...rest] = line.toLowerCase().split(/\s+/), arg = rest.join(' ');
+  if (c === 'clear' || c === 'exit'){ closeOut(); return; }
+  say(`<span class="dim">~ $ ${esc(line)}</span>`);
+  if (c === 'help') say([row('whoami', 'whoami', 'qui je suis'), row('ls', 'ls', 'les projets'), row('cat raytracer', 'cat <projet>', 'ouvrir un projet'), row('cd projets', 'cd <section>', 'aller à une section'), row('fond', 'fond', 'effet du fond'), row('filtre', 'filtre', "filtre d'image"), row('clear', 'clear', 'fermer')].join('\n'));
+  else if (c === 'whoami') say("necrelox, développeur. Projets d'école et projets perso, gardés ici comme un journal.");
+  else if (c === 'ls' || c === 'projets') say(P.map(p => `<span class="dim">${p.year}</span>  ${B('cat ' + p.id, p.id)}${' '.repeat(14 - p.id.length)}<span class="dim">${p.kind}</span>`).join('\n'));
+  else if (c === 'cat' || c === 'open'){ const i = P.findIndex(p => p.id === arg);
+    if (i < 0) say(`cat: ${esc(arg || '?')} : introuvable. ${B('ls')}`); else { pick(i); goTo('projets'); say(`${P[i].id} <span class="dim">(${P[i].kind}, ${P[i].year}, ${P[i].stack})</span>\n${P[i].desc}`); } }
+  else if (c === 'cd' || c === 'aller'){ if (SECT[arg]){ goTo(SECT[arg]); say(`<span class="dim">→ ${SECT[arg]}</span>`); } else say(choice('cd', ['haut', 'a-propos', 'projets', 'liens'])); }
+  else if (c === 'fond'){ if (['braise', 'loupe', 'onde'].includes(arg)) setMode(arg); say(choice('fond', ['braise', 'loupe', 'onde'], mode)); }
+  else if (c === 'filtre'){ if (['aucun', 'grain', 'crt'].includes(arg)) setFx(arg === 'aucun' ? '' : arg); say(choice('filtre', ['aucun', 'grain', 'crt'], fx || 'aucun')); }
+  else if (c === 'sudo') say('permission refusée. bien tenté.');
+  else say(`commande introuvable : ${esc(c)}. ${B('help')}`);
+}
+const hist = []; let hi = 0;
+inp.addEventListener('keydown', e => {
+  if (e.key === 'Enter'){ if (inp.value.trim()){ hist.push(inp.value); hi = hist.length; } run(inp.value); inp.value = ''; }
+  else if (e.key === 'ArrowUp'){ e.preventDefault(); if (hi > 0) inp.value = hist[--hi]; }
+  else if (e.key === 'ArrowDown'){ e.preventDefault(); inp.value = hi < hist.length - 1 ? hist[++hi] : (hi = hist.length, ''); }
+  else if (e.key === 'Escape'){ closeOut(); inp.blur(); } });
+$('#con').addEventListener('click', e => { const b = e.target.closest('[data-cmd]'); if (b){ run(b.dataset.cmd); return; } if (e.target.closest('#con-x')){ e.preventDefault(); closeOut(); } });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !out.hidden){ closeOut(); return; } if (e.key === '/' && !e.target.matches('input,textarea') && !e.metaKey && !e.ctrlKey){ e.preventDefault(); inp.focus(); if (out.hidden) run('help'); } });
 
 /* ================= main loop ================= */
 function layout(){ sizeBg(); buildName(); const small = innerWidth < 520; SW = small ? 46 : 64; SH = small ? 23 : 32; }
