@@ -1,0 +1,468 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Necrelox Terminal Portfolios</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=JetBrains+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+/* Layout: a quiet switcher bar on top, then one "screen" that swaps between five terminal worlds, each with its own palette and typeface. */
+:root{
+  color-scheme:dark;
+  --c-bg:#0b0c10; --c-panel:#14161c; --c-line:#282c37; --c-fg:#d5d9e2; --c-dim:#8b93a8; --c-hi:#f4f5f7;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --plex:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --crt:"VT323","JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--c-bg);color:var(--c-fg);font-family:var(--mono);font-size:14px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-block:22px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+
+.top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px}
+.top h1{margin:0;font-size:18px;font-weight:700;color:var(--c-hi);text-wrap:balance}
+.top p{margin:0;color:var(--c-dim);font-size:12.5px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{background:var(--c-panel);border:1px solid var(--c-line);border-radius:6px;padding:7px 12px;color:var(--c-dim)}
+.tabs button b{color:var(--c-fg);font-weight:700;margin-right:6px}
+.tabs button[aria-selected="true"]{background:var(--c-hi);border-color:var(--c-hi);color:var(--c-bg)}
+.tabs button[aria-selected="true"] b{color:var(--c-bg)}
+.blurb{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 28px;font-size:13px;min-height:3.2em}
+.blurb div{min-width:0}
+.blurb dt{color:var(--c-dim);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.blurb dd{margin:0}
+
+/* ---------- the screen ---------- */
+.stage{--bg:#0f1420;--fg:#c8d3f5;--dim:#7c88b0;--a1:#7dcfff;--a2:#9ece6a;--a3:#ff9e64;--line:#252c44;--font:var(--mono);
+  background:var(--bg);color:var(--fg);font-family:var(--font);font-size:clamp(12px,3.2vw,14px);border:1px solid var(--line);border-radius:10px;overflow:hidden;position:relative;min-height:520px}
+.stage[data-v="fetch"]{--bg:#1e1e2e;--fg:#cdd6f4;--dim:#8a90ab;--a1:#cba6f7;--a2:#a6e3a1;--a3:#fab387;--line:#34364a}
+.stage[data-v="tui"]{--bg:#1d2021;--fg:#ebdbb2;--dim:#a39483;--a1:#fabd2f;--a2:#8ec07c;--a3:#fe8019;--line:#504945}
+.stage[data-v="scene"]{--bg:#0a1a3a;--fg:#dfe9ff;--dim:#8aa0d6;--a1:#ffd84a;--a2:#9fc0ff;--a3:#ffffff;--line:#2a447f;--font:var(--plex)}
+.stage[data-v="journal"]{--bg:#140d02;--fg:#ffb000;--dim:#b87a10;--a1:#ffd27a;--a2:#ff8a1f;--a3:#ffe9b8;--line:#4a2f00;--font:var(--crt);font-size:clamp(16px,4.4vw,21px);line-height:1.25}
+.art{margin:0;font:inherit;line-height:1.1;white-space:pre;overflow:hidden;max-width:100%}
+.dim{color:var(--dim)} .a1{color:var(--a1)} .a2{color:var(--a2)} .a3{color:var(--a3)}
+.cur{display:inline-block;width:.6em;height:1.1em;background:var(--fg);vertical-align:text-bottom}
+.tag{color:var(--bg);background:var(--dim);padding:0 .5em;border-radius:2px;font-size:.85em}
+.tag.ecole{background:var(--a3)} .tag.perso{background:var(--a2)}
+@media (prefers-reduced-motion:no-preference){
+  .cur{animation:blink 1.1s steps(1) infinite}
+  .rowin>*{animation:rowin .35s both}
+}
+@keyframes blink{50%{opacity:0}}
+@keyframes rowin{from{opacity:0;transform:translateX(-10px)}}
+
+/* 1 — shell */
+.winbar{padding:7px 14px;border-bottom:1px solid var(--line);color:var(--dim);font-size:.9em;display:flex;justify-content:space-between;gap:12px}
+.term{height:440px;overflow-y:auto;padding:14px;cursor:text}
+.term .ln{white-space:pre-wrap;overflow-wrap:anywhere;min-height:1.55em}
+.term .art{color:var(--a1);margin-block:6px}
+.prompt{display:flex;align-items:baseline}
+.ps1{color:var(--a2)} .pth{color:var(--a1)}
+#sh-in{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--fg);font:inherit;padding:0;caret-color:var(--a1)}
+@media (pointer:coarse){#sh-in{font-size:16px}}
+.term button.lk{background:none;border:0;padding:0;color:var(--a1);text-decoration:underline;text-underline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(--line)}
+.chips span{color:var(--dim);align-self:center;margin-right:4px}
+.chips button{background:none;border:1px solid var(--line);border-radius:4px;padding:3px 10px}
+.chips button:hover{border-color:var(--a1);color:var(--a1)}
+
+/* 2 — fetch */
+.fetch{padding:18px;display:flex;flex-direction:column;gap:14px}
+.fetch .card{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center}
+.fetch .art{color:var(--a1)}
+.fetch dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 16px;min-width:0;flex:1 1 280px}
+.fetch dt{color:var(--a1);font-weight:700} .fetch dd{margin:0;overflow-wrap:anywhere}
+.fetch .who{grid-column:1/-1;font-weight:700} .fetch .rule{grid-column:1/-1;color:var(--dim);overflow:hidden;white-space:nowrap}
+.sw{grid-column:1/-1;display:flex;margin-top:8px} .sw i{width:2.4em;height:1.2em}
+.ls{display:flex;flex-direction:column}
+.ls summary{display:flex;gap:1.5ch;padding:2px 6px;cursor:pointer;list-style:none;border-radius:3px}
+.ls summary::-webkit-details-marker{display:none}
+.ls summary:hover,.ls details[open] summary{background:var(--line)}
+.ls .nm{color:var(--a2);font-weight:700;min-width:13ch} .ls .ds{min-width:0;flex:1}
+.ls .body{margin:2px 6px 8px;padding:6px 12px;border-left:2px solid var(--a1);color:var(--fg)}
+@media (max-width:640px){.ls .pm,.ls summary .ds{display:none}}
+
+/* 3 — tui */
+.tui{padding:16px 12px 0;display:flex;flex-direction:column;gap:14px}
+.tui .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:14px 12px}
+.tui .col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.pane{border:1px solid var(--line);padding:12px 12px 10px;position:relative;min-width:0}
+.pane>h3{position:absolute;top:-.75em;left:10px;margin:0;padding:0 6px;background:var(--bg);font:inherit;color:var(--a2)}
+.pane.on{border-color:var(--a1)} .pane.on>h3{color:var(--a1);font-weight:700}
+.pane p{margin:0}
+.rows{display:flex;flex-direction:column}
+.rows button{display:flex;justify-content:space-between;gap:12px;background:none;border:0;padding:1px 6px;text-align:left}
+.rows button[aria-selected="true"]{background:var(--a1);color:var(--bg);font-weight:700}
+.rows button[aria-selected="true"] .dim{color:var(--bg)}
+.bars{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 12px;white-space:pre;overflow:hidden}
+.bars span:nth-child(even){color:var(--a2)}
+.tui .art{color:var(--a3);margin-bottom:10px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 14px;margin:0} .kv dt{color:var(--dim)} .kv dd{margin:0}
+.status{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;background:var(--line);margin-inline:-12px;padding:4px 12px}
+@media (max-width:720px){.tui .grid{grid-template-columns:minmax(0,1fr)}}
+
+/* 4 — scene */
+.hero{position:relative;border-bottom:1px solid var(--line)}
+.hero .art{line-height:1.2;color:var(--dim);cursor:crosshair}
+.hero .art+.art{position:absolute;inset:0;color:var(--a1);pointer-events:none;font-weight:600}
+.scene-body{padding:22px 18px 26px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px 32px}
+.scene-body h2{font-size:.85em;letter-spacing:.12em;text-transform:uppercase;color:var(--a2);margin:0 0 10px;font-weight:600}
+.scene-body p{margin:0 0 12px;max-width:46ch}
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.work{border:1px dashed var(--line);padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.work:hover{border-color:var(--a1);border-style:solid}
+.work h3{margin:0;font-size:1.25em;font-weight:600;color:var(--a3);overflow-wrap:anywhere}
+.work .meta{display:flex;justify-content:space-between;color:var(--dim);font-size:.9em}
+.work p{margin:0} .work .st{color:var(--a2);font-size:.9em}
+@media (max-width:720px){.scene-body{grid-template-columns:minmax(0,1fr)}}
+
+/* 5 — journal */
+.stage[data-v="journal"]::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0 2px,rgba(0,0,0,.25) 2px 3px)}
+.journal{padding:18px;display:flex;flex-direction:column;gap:12px;text-shadow:0 0 7px color-mix(in srgb,var(--fg) 45%,transparent)}
+.journal .art{color:var(--a1);line-height:.95}
+.journal .wave{font-family:var(--mono);font-size:.6em;color:var(--dim);white-space:pre;overflow:hidden}
+.graph{display:flex;flex-direction:column}
+.graph>*{display:flex;gap:1ch;white-space:pre-wrap;text-align:left;background:none;border:0;padding:0 4px;text-shadow:inherit}
+.graph button:hover,.graph button[aria-pressed="true"]{background:var(--fg);color:var(--bg);text-shadow:none}
+.graph button:hover *,.graph button[aria-pressed="true"] *{color:var(--bg)}
+.graph .g{color:var(--dim)} .graph .hs{color:var(--a2)} .graph .rf{color:var(--a3)}
+.show{border:1px solid var(--line);padding:10px 14px;white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* ---------- research ---------- */
+.notes{border-top:1px solid var(--c-line);padding-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 32px;font-size:13px}
+.notes h2{grid-column:1/-1;margin:0;font-size:14px;color:var(--c-hi)}
+.notes h3{margin:0 0 4px;font-size:13px;color:var(--c-hi)}
+.notes p{margin:0;color:var(--c-dim)} .notes a{color:var(--c-fg)}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Necrelox · cinq pistes de portfolio terminal</h1>
+    <p>Les projets affichés sont des exemples, à remplacer par les tiens.</p>
+  </header>
+  <div class="tabs" role="tablist" aria-label="Versions" id="tabs"></div>
+  <dl class="blurb" id="blurb"></dl>
+  <main class="stage" id="stage" role="tabpanel"></main>
+
+  <section class="notes">
+    <h2>Ce qui se fait sur GitHub</h2>
+    <div><h3>Le shell interactif</h3><p>Le format le plus courant : le visiteur tape <em>help</em>, <em>projects</em>, <em>contact</em>. Voir <a href="https://github.com/iamdhakrey/terminal-portfolio">terminal-portfolio</a>, <a href="https://github.com/Sigmakib2/CmdFolio">CmdFolio</a>, <a href="https://github.com/k0msenapati/terminalfolio">TermFolio</a>. Les meilleurs ajoutent des raccourcis cliquables et des thèmes.</p></div>
+    <div><h3>La carte fetch</h3><p>Un logo ASCII à gauche, les infos à droite, comme neofetch ou fastfetch. Voir le thème Astro <a href="https://astro.build/themes/details/astro-distro/">astro-distro</a>, qui synchronise aussi les projets depuis GitHub.</p></div>
+    <div><h3>Le README de profil</h3><p>Sans site : un GIF de terminal généré pour le README, avec <a href="https://github.com/x0rzavi/github-readme-terminal">github-readme-terminal</a>, ou des stats en ASCII. Bon complément au portfolio.</p></div>
+    <div><h3>L'animation ASCII</h3><p>GitHub a détaillé la fabrication de la <a href="https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/">bannière ASCII animée de Copilot CLI</a>. Même principe ici : on dessine dans un canvas caché, puis on convertit les pixels en caractères.</p></div>
+    <div><h3>Le portfolio dans le vrai terminal</h3><p>Certains vont jusqu'à un portfolio lancé avec <em>npx</em>, voir <a href="https://dev.to/bikidev/i-built-an-open-source-cli-tool-that-turns-your-developer-portfolio-into-a-terminal-experience-28a4">own-term</a>. Amusant, mais peu de visiteurs le lanceront.</p></div>
+    <div><h3>Pour démarrer</h3><p>freeCodeCamp a un <a href="https://www.freecodecamp.org/news/how-to-create-an-interactive-terminal-portfolio-website/">tutoriel complet</a>. Une seule page HTML suffit, hébergée gratuitement sur GitHub Pages.</p></div>
+  </section>
+</div>
+
+<script>
+(() => {
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = (s, r=document) => r.querySelector(s);
+
+/* ---------- content (examples) ---------- */
+const ME = {
+  bio: "Ce profil est le journal de mon parcours en programmation : des projets d'école et des projets perso, à différents stades d'avancement.",
+  bio2: "Ils montrent mon évolution dans le temps, pas forcément mon niveau actuel. Je les garde comme un journal.",
+  github: 'github.com/Necrelox', discord: 'Necrelox'
+};
+const P = [
+  {id:'portfolio',   kind:'perso', year:2026, stack:['HTML','CSS','JS'],          status:'en cours', hash:'a3f9c21', desc:'Ce site : un portfolio en mode terminal.'},
+  {id:'bot-discord', kind:'perso', year:2025, stack:['TypeScript','Node'],        status:'stable',   hash:'7be0d14', desc:'Un bot pour gérer un serveur entre amis.'},
+  {id:'raytracer',   kind:'école', year:2025, stack:['C++'],                      status:'terminé',  hash:'5c1e8aa', desc:'Rendu 3D par lancer de rayons, écrit de zéro.'},
+  {id:'minishell',   kind:'école', year:2024, stack:['C'],                        status:'terminé',  hash:'19d4f70', desc:'Un shell Unix minimal : pipes, redirections, variables.'},
+  {id:'api-auth',    kind:'perso', year:2024, stack:['TypeScript','PostgreSQL'],  status:'archivé',  hash:'e02b6c3', desc:"Une API d'authentification avec sessions et rôles."},
+  {id:'dotfiles',    kind:'perso', year:2024, stack:['Shell','Lua'],              status:'stable',   hash:'c41d0b7', desc:'Ma configuration : shell, éditeur, raccourcis.'},
+];
+const SKILLS = [['TypeScript',.85],['C / C++',.7],['Shell',.6],['SQL',.55]];
+const kcls = k => k === 'école' ? 'ecole' : 'perso';
+
+/* ---------- helpers ---------- */
+function scope(){
+  const offs = [];
+  return {
+    loop(fps, fn){ // fn(tSeconds)
+      if (RM) { fn(0); return; }
+      let id, last = 0;
+      const tick = now => { id = requestAnimationFrame(tick); if (now - last < 1000/fps) return; last = now; fn(now/1000); };
+      id = requestAnimationFrame(tick); offs.push(() => cancelAnimationFrame(id));
+    },
+    every(ms, fn){ const id = setInterval(fn, ms); offs.push(() => clearInterval(id)); },
+    on(t, ev, fn, o){ t.addEventListener(ev, fn, o); offs.push(() => t.removeEventListener(ev, fn, o)); },
+    stop(){ offs.forEach(f => f()); }
+  };
+}
+function charW(el){
+  const s = document.createElement('span'); s.textContent = 'M'.repeat(50); s.style.cssText = 'position:absolute;visibility:hidden;white-space:pre';
+  el.appendChild(s); const w = s.getBoundingClientRect().width / 50; s.remove(); return w || 8;
+}
+const colsOf = (el, pad=0) => Math.max(20, Math.floor((el.clientWidth - pad) / charW(el)));
+
+/* Draw text in a hidden canvas, return a grid of coverage values 0..1 (one per character cell). */
+function textMask(text, cols, stretch=1){
+  const cw = 6, ch = 12, W = cols * cw, F = '900 100px "Arial Black","Helvetica Neue",Impact,Arial,sans-serif';
+  const t = document.createElement('canvas').getContext('2d'); t.font = F;
+  const m = t.measureText(text), asc = m.actualBoundingBoxAscent || 72, desc = m.actualBoundingBoxDescent || 0;
+  const left = m.actualBoundingBoxLeft || 0, wpx = (m.actualBoundingBoxRight + left) || m.width;
+  const s = W / wpx, rows = Math.max(3, Math.round((asc + desc) * s * stretch / ch)), H = rows * ch;
+  const c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d', {willReadFrequently:true});
+  x.fillStyle = '#fff'; x.font = F; x.setTransform(s, 0, 0, H / (asc + desc), 0, 0); x.fillText(text, left, asc);
+  const d = x.getImageData(0, 0, W, H).data, out = [];
+  for (let r = 0; r < rows; r++){ const row = [];
+    for (let q = 0; q < cols; q++){ let a = 0;
+      for (let yy = 0; yy < ch; yy += 2) for (let xx = 0; xx < cw; xx += 2) a += d[((r*ch+yy)*W + q*cw+xx)*4 + 3];
+      row.push(a / (255 * (ch/2) * (cw/2)));
+    } out.push(row); }
+  return out;
+}
+/* The name as one line, or stacked on two lines when the screen is too narrow for eight letters. */
+function nameMask(cols, stretch){
+  if (cols >= 56) return textMask('NECRELOX', cols, stretch);
+  return [...textMask('NECR', cols, stretch * .62), new Array(cols).fill(0), ...textMask('ELOX', cols, stretch * .62)];
+}
+const field = (x, y, t, k=1) => Math.sin(x*(.12+.03*k)+t) + Math.cos(y*(.4+.05*k)-t*.8) + Math.sin((x*.07+y*.3)*(.5+k*.25)+t*.5);
+
+/* ================= 1 — SHELL ================= */
+function mountShell(root){
+  const S = scope();
+  root.innerHTML = `
+    <div class="winbar"><span>necrelox@portfolio: ~</span><span>zsh</span></div>
+    <div class="term" id="sh-term"><div id="sh-out"></div>
+      <label class="prompt" for="sh-in"><span class="ps1">necrelox</span>:<span class="pth">~</span>$&nbsp;<input id="sh-in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Commande"></label></div>
+    <div class="chips"><span>raccourcis</span>${['help','whoami','projets','skills','contact','banner','clear'].map(c => `<button data-cmd="${c}">${c}</button>`).join('')}</div>`;
+  const term = $('#sh-term', root), out = $('#sh-out', root), inp = $('#sh-in', root);
+  const print = (html, cls='') => { const d = document.createElement('div'); d.className = 'ln ' + cls; d.innerHTML = html; out.appendChild(d); term.scrollTop = term.scrollHeight; return d; };
+  const cols = Math.min(74, colsOf(term, 30));
+  const mask = nameMask(cols, 1.5);
+  let bannerEl = null;
+  const drawBanner = t => { if (!bannerEl || !bannerEl.isConnected) return;
+    const sweep = (t * 28) % (cols + 40) - 10;
+    bannerEl.textContent = mask.map(row => row.map((v, q) => {
+      if (v < .06) return ' ';
+      const near = Math.abs(q - sweep);
+      if (near < 2) return '░'; if (near < 4) return '▒';
+      return v > .6 ? '█' : v > .35 ? '▓' : v > .15 ? '▒' : '░';
+    }).join('')).join('\n'); };
+  const banner = () => { const d = print('<pre class="art" aria-label="Necrelox"></pre>'); bannerEl = d.firstChild; drawBanner(-10); };
+  const pad = (s, n) => s + ' '.repeat(Math.max(1, n - s.length));
+  const CMD = {
+    help: () => ['<span class="a3">Commandes</span>',
+      ['whoami','qui je suis'],['projets','la liste de mes travaux'],['cat &lt;nom&gt;',"le détail d'un projet, ex. cat raytracer"],
+      ['skills',"ce que j'utilise"],['contact','où me trouver'],['banner',"rejouer la bannière"],['clear',"vider l'écran"]
+    ].map(l => Array.isArray(l) ? `  <span class="a1">${pad(l[0], l[0].includes('&') ? 22 : 14)}</span><span class="dim">${l[1]}</span>` : l).join('\n'),
+    whoami: () => `${ME.bio}\n<span class="dim">${ME.bio2}</span>`,
+    projets: () => P.map(p => `<span class="tag ${kcls(p.kind)}">${p.kind}</span> <span class="dim">${p.year}</span>  <button class="lk" data-cmd="cat ${p.id}">${p.id}</button>${' '.repeat(13 - p.id.length)}<span class="dim">${p.desc}</span>`).join('\n'),
+    ls: () => CMD.projets(),
+    skills: () => SKILLS.map(([n, v]) => `${pad(n, 12)}<span class="a2">${'█'.repeat(Math.round(v*16))}</span><span class="dim">${'░'.repeat(16 - Math.round(v*16))}</span> ${Math.round(v*100)}%`).join('\n'),
+    contact: () => `GitHub   <a href="https://${ME.github}" target="_blank" rel="noopener">${ME.github}</a>\nDiscord  ${ME.discord}`,
+    sudo: () => `<span class="a3">Bien tenté.</span> Cet incident sera signalé.`,
+  };
+  function run(raw){
+    const line = raw.trim(); print(`<span class="ps1">necrelox</span>:<span class="pth">~</span>$ ${esc(line)}`);
+    if (!line) return;
+    const [c, ...rest] = line.split(/\s+/), arg = rest.join(' ');
+    if (c === 'clear') { out.innerHTML = ''; return; }
+    if (c === 'banner') { banner(); return; }
+    if (c === 'cat' || c === 'open') {
+      const p = P.find(p => p.id === arg.replace(/\/$/, ''));
+      print(p ? `<span class="a1"># ${p.id}</span>  <span class="tag ${kcls(p.kind)}">${p.kind}</span>\n${p.desc}\n<span class="dim">année </span>${p.year}   <span class="dim">stack </span>${p.stack.join(', ')}   <span class="dim">état </span>${p.status}`
+              : `cat: ${esc(arg || '?')} : projet introuvable. Essaie <button class="lk" data-cmd="projets">projets</button>.`);
+      return;
+    }
+    print(CMD[c] ? CMD[c]() : `zsh: commande introuvable : ${esc(c)}. Tape <button class="lk" data-cmd="help">help</button>.`);
+  }
+  // boot
+  print('<span class="dim">$ ./intro.sh</span>'); banner();
+  print(`${ME.bio}`);
+  print(`\nTape <span class="a1">help</span> ou clique un raccourci en bas. <span class="dim">↑ ↓ pour l'historique.</span>\n`);
+  S.loop(20, drawBanner);
+  const hist = []; let hi = 0;
+  S.on(inp, 'keydown', e => {
+    if (e.key === 'Enter') { run(inp.value); if (inp.value.trim()) hist.push(inp.value); hi = hist.length; inp.value = ''; }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (hi > 0) inp.value = hist[--hi]; }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); inp.value = hi < hist.length - 1 ? hist[++hi] : (hi = hist.length, ''); }
+  });
+  S.on(root, 'click', e => { const b = e.target.closest('[data-cmd]'); if (b) { run(b.dataset.cmd); return; }
+    if (e.target.closest('.term') && !getSelection().toString()) inp.focus({preventScroll:true}); });
+  return S.stop;
+}
+
+/* ================= 2 — FETCH ================= */
+function donut(A, B, W, H){
+  const b = new Array(W*H).fill(' '), z = new Array(W*H).fill(0), xs = W*.5, ys = H*.56;
+  for (let j = 0; j < 6.28; j += .1) for (let i = 0; i < 6.28; i += .03){
+    const c = Math.sin(i), d = Math.cos(j), e = Math.sin(A), f = Math.sin(j), g = Math.cos(A), h = d + 2,
+          D = 1/(c*h*e + f*g + 5), l = Math.cos(i), m = Math.cos(B), n = Math.sin(B), t = c*h*g - f*e;
+    const x = 0|(W/2 + xs*D*(l*h*m - t*n)), y = 0|(H/2 + ys*D*(l*h*n + t*m)), o = x + W*y,
+          N = 0|(8*((f*e - c*d*g)*m - c*d*e - f*g - l*d*n));
+    if (y < H && y >= 0 && x >= 0 && x < W && D > z[o]) { z[o] = D; b[o] = '.,-~:;=!*#$@'[N > 0 ? N : 0]; }
+  }
+  let s = ''; for (let r = 0; r < H; r++) s += b.slice(r*W, r*W + W).join('') + (r < H-1 ? '\n' : ''); return s;
+}
+function mountFetch(root){
+  const S = scope();
+  root.innerHTML = `<div class="fetch">
+    <div><span class="a2">necrelox</span>:<span class="a1">~</span>$ fastfetch</div>
+    <div class="card"><pre class="art" id="ft-art" aria-hidden="true"></pre>
+      <dl><div class="who"><span class="a1">necrelox</span>@<span class="a1">github</span></div><div class="rule">────────────────────────────────────────────</div>
+        <dt>Profil</dt><dd>Développeur · école et projets perso</dd>
+        <dt>Journal</dt><dd>${P.length} projets (${P.filter(p => p.kind==='école').length} école, ${P.filter(p => p.kind==='perso').length} perso)</dd>
+        <dt>Langages</dt><dd>${SKILLS.map(s => s[0]).join(', ')}</dd>
+        <dt>Depuis</dt><dd>2024</dd>
+        <dt>GitHub</dt><dd><a href="https://${ME.github}" target="_blank" rel="noopener">${ME.github}</a></dd>
+        <dt>Discord</dt><dd>${ME.discord}</dd>
+        <div class="sw">${['--line','--dim','--a1','--a2','--a3','--fg'].map(v => `<i style="background:var(${v})"></i>`).join('')}</div>
+      </dl></div>
+    <div><span class="a2">necrelox</span>:<span class="a1">~</span>$ cat a-propos.md</div>
+    <div style="max-width:68ch">${ME.bio} <span class="dim">${ME.bio2}</span></div>
+    <div><span class="a2">necrelox</span>:<span class="a1">~</span>$ ls -l ~/projets <span class="dim"># clique une ligne pour l'ouvrir</span></div>
+    <div class="ls">${P.map((p, i) => `<details${i === 0 ? ' open' : ''}><summary><span class="pm dim">drwxr-xr-x</span><span class="tag ${kcls(p.kind)}">${p.kind}</span><span class="dim">${p.year}</span><span class="nm">${p.id}/</span><span class="ds dim">${p.desc}</span></summary>
+      <div class="body">${p.desc}<br><span class="dim">stack</span> ${p.stack.join(', ')} · <span class="dim">état</span> ${p.status}</div></details>`).join('')}</div>
+    <div><span class="a2">necrelox</span>:<span class="a1">~</span>$ <span class="cur"></span></div>
+  </div>`;
+  const art = $('#ft-art', root), small = root.clientWidth < 520, W = small ? 30 : 40, H = small ? 14 : 19;
+  S.loop(24, t => { art.textContent = donut(1 + t*.9, 1 + t*.45, W, H); });
+  return S.stop;
+}
+
+/* ================= 3 — TUI ================= */
+function mountTui(root){
+  const S = scope(); let sel = 0;
+  root.innerHTML = `<div class="tui">
+    <div class="grid">
+      <div class="col">
+        <section class="pane"><h3>[1] À propos</h3><p>${ME.bio}</p></section>
+        <section class="pane on"><h3>[2] Projets</h3><div class="rows" role="listbox" aria-label="Projets" id="tu-list">${P.map((p, i) => `<button role="option" data-i="${i}"><span>${p.id}</span><span class="dim">${p.kind} ${p.year}</span></button>`).join('')}</div></section>
+        <section class="pane"><h3>[3] Compétences</h3><div class="bars">${SKILLS.map(([n, v]) => `<span>${n}</span><span>${'█'.repeat(Math.round(v*14))}${'░'.repeat(14 - Math.round(v*14))} ${Math.round(v*100)}%</span>`).join('')}</div></section>
+      </div>
+      <div class="col">
+        <section class="pane" style="flex:1"><h3>Aperçu</h3><pre class="art" id="tu-art" aria-hidden="true"></pre><dl class="kv" id="tu-kv"></dl></section>
+        <section class="pane"><h3>Contact</h3><dl class="kv"><dt>github</dt><dd><a href="https://${ME.github}" target="_blank" rel="noopener">${ME.github}</a></dd><dt>discord</dt><dd>${ME.discord}</dd></dl></section>
+      </div>
+    </div>
+    <div class="status"><span><b>j</b>/<b>k</b> ou clic : naviguer</span><span><span id="tu-spin">⠋</span> <span id="tu-pos"></span> · <span id="tu-clock"></span></span></div>
+  </div>`;
+  const list = $('#tu-list', root), art = $('#tu-art', root), kv = $('#tu-kv', root);
+  const acols = colsOf(art.parentElement, 28), RAMP = ' .:-=+*#%@';
+  const pick = i => { sel = (i + P.length) % P.length; const p = P[sel];
+    [...list.children].forEach((b, k) => b.setAttribute('aria-selected', k === sel));
+    kv.innerHTML = `<dt>nom</dt><dd class="a1">${p.id}</dd><dt>type</dt><dd>${p.kind}</dd><dt>année</dt><dd>${p.year}</dd><dt>stack</dt><dd>${p.stack.join(', ')}</dd><dt>état</dt><dd class="a2">${p.status}</dd><dt>résumé</dt><dd>${p.desc}</dd>`;
+    $('#tu-pos', root).textContent = `${sel + 1}/${P.length}`; };
+  pick(0);
+  S.loop(15, t => { let s = '';
+    for (let y = 0; y < 9; y++){ for (let x = 0; x < acols; x++) s += RAMP[Math.max(0, Math.min(9, 0|((field(x, y, t, sel + 1) + 3) / 6 * 10)))]; if (y < 8) s += '\n'; }
+    art.textContent = s; });
+  const SP = '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'; let f = 0;
+  const clock = () => { $('#tu-clock', root).textContent = new Date().toLocaleTimeString('fr-FR'); };
+  clock(); S.every(1000, clock);
+  if (!RM) S.every(90, () => { $('#tu-spin', root).textContent = SP[f = (f + 1) % SP.length]; });
+  S.on(list, 'click', e => { const b = e.target.closest('[data-i]'); if (b) pick(+b.dataset.i); });
+  S.on(document, 'keydown', e => { if (e.target.matches('input,textarea') || e.metaKey || e.ctrlKey || e.altKey) return;
+    const inList = list.contains(document.activeElement);
+    if (e.key === 'j' || (inList && e.key === 'ArrowDown')) { e.preventDefault(); pick(sel + 1); }
+    else if (e.key === 'k' || (inList && e.key === 'ArrowUp')) { e.preventDefault(); pick(sel - 1); } else return;
+    if (inList) list.children[sel].focus(); });
+  return S.stop;
+}
+
+/* ================= 4 — SCENE ================= */
+function mountScene(root){
+  const S = scope();
+  root.innerHTML = `<div class="hero"><pre class="art" id="sc-bg" aria-hidden="true"></pre><pre class="art" id="sc-fg" aria-label="Necrelox"></pre></div>
+    <div class="scene-body">
+      <section><h2>À propos</h2><p>${ME.bio}</p><p class="dim">${ME.bio2}</p>
+        <h2 style="margin-top:22px">Contact</h2><p>GitHub <a href="https://${ME.github}" target="_blank" rel="noopener">${ME.github}</a><br>Discord ${ME.discord}</p></section>
+      <section><h2>Travaux</h2><div class="works">${P.map(p => `<article class="work" tabindex="0"><div class="meta"><span>[${p.kind}]</span><span>${p.year}</span></div><h3 data-t="${p.id}">${p.id}</h3><p>${p.desc}</p><span class="dim">${p.stack.join(' · ')}</span><span class="st">● ${p.status}</span></article>`).join('')}</div></section>
+    </div>`;
+  const bg = $('#sc-bg', root), fg = $('#sc-fg', root), hero = bg.parentElement;
+  const cols = colsOf(hero), mc = Math.min(cols - 4, 96);
+  const mask = nameMask(mc, 1.5), rows = Math.max(cols < 60 ? 13 : 19, mask.length + 4), ox = (cols - mc) >> 1, oy = Math.max(0, (rows - mask.length) >> 1);
+  const at = (x, y) => (mask[y - oy] && mask[y - oy][x - ox]) || 0;
+  let px = -99, py = -99;
+  S.on(bg, 'pointermove', e => { const r = bg.getBoundingClientRect(); px = (e.clientX - r.left) / r.width * cols; py = (e.clientY - r.top) / r.height * rows; });
+  S.on(bg, 'pointerleave', () => { px = py = -99; });
+  const LIGHT = '   ..·:;', DENSE = '+*#%@';
+  S.loop(20, t => { let a = '', b = '';
+    for (let y = 0; y < rows; y++){
+      for (let x = 0; x < cols; x++){
+        const m = at(x, y), dx = (x - px) * .5, dy = y - py, dist = Math.sqrt(dx*dx + dy*dy);
+        const n = field(x, y, t * .8, 1) + (dist < 9 ? Math.sin(dist * 1.2 - t * 6) * (1 - dist / 9) * 2.5 : 0);
+        if (m > .12) { a += ' '; b += DENSE[Math.max(0, Math.min(4, 0|(m * 3.2 + (Math.sin(x * .25 - t * 2.4) + 1) * .9)))]; }
+        else { b += ' '; a += LIGHT[Math.max(0, Math.min(7, 0|((n + 3) / 6 * 8)))]; }
+      }
+      if (y < rows - 1) { a += '\n'; b += '\n'; }
+    }
+    bg.textContent = a; fg.textContent = b; });
+  const G = '!<>-_\\/[]{}=+*^?#';
+  const scramble = el => { if (RM || el._b) return; el._b = 1; const txt = el.dataset.t; let i = 0;
+    const id = setInterval(() => { el.textContent = [...txt].map((c, k) => k < i ? c : G[Math.random() * G.length | 0]).join('');
+      if (i++ >= txt.length) { clearInterval(id); el.textContent = txt; el._b = 0; } }, 35); };
+  root.querySelectorAll('.work').forEach(w => { const h = $('h3', w); S.on(w, 'pointerenter', () => scramble(h)); S.on(w, 'focus', () => scramble(h)); });
+  return S.stop;
+}
+
+/* ================= 5 — JOURNAL ================= */
+function mountJournal(root){
+  const S = scope();
+  const main = P.filter(p => p.kind === 'perso'), ecole = P.filter(p => p.kind === 'école');
+  const row = (g, p, ref='') => `<button data-h="${p.hash}" aria-pressed="false"><span class="g">${g}</span><span class="hs">${p.hash}</span><span>${ref ? `<span class="rf">${ref}</span> ` : ''}${p.kind}: ${p.id}</span></button>`;
+  root.innerHTML = `<div class="journal">
+    <pre class="art" id="jr-art" aria-label="Necrelox"></pre>
+    <div class="wave" id="jr-wave" aria-hidden="true"></div>
+    <div>$ git log --graph --oneline --all <span class="dim"># clique un commit</span></div>
+    <div class="graph rowin" id="jr-graph">
+      ${row('*', main[0], '(HEAD -> main)')}${row('*', main[1])}
+      ${row('| *', ecole[0], '(ecole)')}${row('| *', ecole[1])}
+      <div><span class="g">|/</span></div>
+      ${main.slice(2).map(p => row('*', p)).join('')}
+      <div><span class="g">*</span><span class="hs">0000000</span><span>init: premier commit, avril 2024</span></div>
+    </div>
+    <div class="show" id="jr-show"></div>
+    <div>$ cat CONTACT</div>
+    <div>github   <a href="https://${ME.github}" target="_blank" rel="noopener">${ME.github}</a><br>discord  ${ME.discord}</div>
+    <div>$ <span class="cur"></span></div>
+  </div>`;
+  [...$('#jr-graph', root).children].forEach((el, i) => { el.style.animationDelay = i * 70 + 'ms'; });
+  const art = $('#jr-art', root), cols = Math.min(72, colsOf(art.parentElement, 40));
+  const mask = nameMask(cols, 1.6), word = 'necrelox';
+  S.loop(12, t => { art.textContent = mask.map((r, y) => r.map((v, x) => v < .15 ? ' ' : (Math.sin(x * .35 + y * .6 - t * 3) > .96 ? word[(x + y) % 8] : '#')).join('')).join('\n'); });
+  const wave = $('#jr-wave', root), wc = colsOf(wave), BL = '▁▂▃▄▅▆▇█';
+  S.loop(15, t => { let s = ''; for (let x = 0; x < wc; x++) s += BL[0|((Math.sin(x * .22 + t * 2.2) * Math.sin(x * .05 - t * .6) + 1) * 3.99)]; wave.textContent = s; });
+  const show = h => { const p = P.find(p => p.hash === h);
+    root.querySelectorAll('[data-h]').forEach(b => b.setAttribute('aria-pressed', b.dataset.h === h));
+    $('#jr-show', root).innerHTML = `$ git show ${p.hash}\n<span class="a2">commit ${p.hash}</span>\nAuthor: Necrelox\nDate:   ${p.year}\n\n    ${p.kind}: ${p.id}\n    ${p.desc}\n\n<span class="dim">stack :</span> ${p.stack.join(', ')}   <span class="dim">état :</span> ${p.status}`; };
+  show(P[0].hash);
+  S.on(root, 'click', e => { const b = e.target.closest('[data-h]'); if (b) show(b.dataset.h); });
+  return S.stop;
+}
+
+/* ---------- switcher ---------- */
+const V = {
+  shell:   {n:'Shell',   mount:mountShell,   idea:'Un vrai terminal : le visiteur tape des commandes.', seen:"Le format le plus répandu sur GitHub.", fit:'Le plus ludique. Les raccourcis cliquables sont indispensables pour le mobile et les gens pressés.'},
+  fetch:   {n:'Fetch',   mount:mountFetch,   idea:'Une carte façon fastfetch, logo ASCII animé, projets en ls.', seen:'Thème astro-distro, README de profil.', fit:"Tout se lit d'un coup, rien à apprendre. Le plus simple à maintenir."},
+  tui:     {n:'TUI',     mount:mountTui,     idea:'Une interface à panneaux, comme lazygit ou ranger.', seen:'Plus rare en portfolio, donc plus distinctif.', fit:'Le meilleur rangement quand les travaux deviennent nombreux.'},
+  scene:   {n:'Scène',   mount:mountScene,   idea:"L'animation ASCII est le héros, le reste est une page classique en monospace.", seen:'Bannière animée de Copilot CLI, démoscène.', fit:'Le plus visuel et le plus lisible pour un recruteur. Passe la souris sur le fond.'},
+  journal: {n:'Journal', mount:mountJournal, idea:'Tes projets comme un historique git, sur écran ambre.', seen:'Peu vu ailleurs.', fit:'Colle à ton idée de profil tenu « comme un journal », avec une branche école et une branche perso.'},
+};
+const stage = $('#stage'), tabs = $('#tabs'), blurb = $('#blurb');
+tabs.innerHTML = Object.entries(V).map(([k, v], i) => `<button role="tab" id="tab-${k}" data-v="${k}"><b>${i + 1}</b>${v.n}</button>`).join('');
+let stop = null, cur = null;
+function show(k){
+  if (!V[k]) k = 'shell';
+  if (stop) stop(); cur = k;
+  stage.dataset.v = k; stage.innerHTML = ''; stage.setAttribute('aria-labelledby', 'tab-' + k);
+  [...tabs.children].forEach(b => b.setAttribute('aria-selected', b.dataset.v === k));
+  const v = V[k];
+  blurb.innerHTML = `<div><dt>L'idée</dt><dd>${v.idea}</dd></div><div><dt>Vu où</dt><dd>${v.seen}</dd></div><div><dt>Pour toi si</dt><dd>${v.fit}</dd></div>`;
+  stop = v.mount(stage);
+}
+tabs.addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return;
+  if (location.hash.slice(1) === b.dataset.v) show(b.dataset.v); else location.hash = b.dataset.v; });
+addEventListener('hashchange', () => show(location.hash.slice(1)));
+let lastW = innerWidth, rz;
+addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rz); rz = setTimeout(() => show(cur), 200); });
+const start = () => show(location.hash.slice(1) || 'shell');
+let started = false; const once = () => { if (!started) { started = true; start(); } };
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(once); setTimeout(once, 1200);
+})();
+</script>
