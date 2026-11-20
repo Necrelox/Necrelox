@@ -59,6 +59,12 @@ footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
 .modes{position:fixed;z-index:5;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:14px;background:var(--bg);border:1px solid var(--line);padding:5px 10px;font-family:var(--mono);font-size:12px}
 .modes span{color:var(--faint)} .modes button{color:var(--dim)}
 .modes button[aria-pressed="true"]{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+.fx{right:auto;left:max(14px,env(safe-area-inset-left,0px))}
+#veil{position:fixed;inset:0;z-index:4;pointer-events:none}
+#veil.grain{background-size:160px 160px}
+#veil.crt{background:repeating-linear-gradient(to bottom,transparent 0 2px,rgba(0,0,0,.13) 2px 3px),radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.3) 100%)}
+@media (prefers-reduced-motion:no-preference){ #veil.grain{animation:grain .6s steps(4) infinite} }
+@keyframes grain{ 25%{background-position:40px 90px} 50%{background-position:110px 30px} 75%{background-position:70px 130px} }
 @media (max-width:760px){ .ix{grid-template-columns:minmax(0,1fr)} figure{position:static;order:-1} figure pre{font-size:8.5px} .list button{grid-template-columns:5ch minmax(0,1fr) 6ch} .list .s{display:none} .modes span{display:none} }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
 </style>
@@ -113,6 +119,13 @@ footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
   <button data-m="loupe" aria-pressed="false">loupe</button>
   <button data-m="onde" aria-pressed="false">onde</button>
 </div>
+<div class="modes fx" role="group" aria-label="Filtre" id="fx">
+  <span>filtre</span>
+  <button data-f="" aria-pressed="true">aucun</button>
+  <button data-f="grain" aria-pressed="false">grain</button>
+  <button data-f="crt" aria-pressed="false">crt</button>
+</div>
+<div id="veil" aria-hidden="true"></div>
 
 <script>
 (() => {
@@ -299,7 +312,14 @@ $('#copy').addEventListener('click', async e => { const b = e.currentTarget;
   catch { const r = document.createRange(); r.selectNodeContents($('#discord')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = '[sélectionné]'; }
   setTimeout(() => b.textContent = '[copier]', 1500); });
 $('.modes').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; mode = b.dataset.m; heat.fill(0);
-  document.querySelectorAll('.modes button').forEach(x => x.setAttribute('aria-pressed', x === b)); if (RM) frameBg(0); });
+  document.querySelectorAll('.modes [data-m]').forEach(x => x.setAttribute('aria-pressed', x === b)); if (RM) frameBg(0); });
+let grainUrl = null;
+function makeGrain(){ const c = document.createElement('canvas'); c.width = c.height = 160; const x = c.getContext('2d'), im = x.createImageData(160, 160);
+  for (let i = 0; i < im.data.length; i += 4){ const v = Math.random() * 255 | 0; im.data[i] = im.data[i+1] = im.data[i+2] = v; im.data[i+3] = 26; }
+  x.putImageData(im, 0, 0); return 'url(' + c.toDataURL() + ')'; }
+$('#fx').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; const veil = $('#veil'); veil.className = b.dataset.f;
+  veil.style.backgroundImage = b.dataset.f === 'grain' ? (grainUrl = grainUrl || makeGrain()) : '';
+  document.querySelectorAll('#fx [data-f]').forEach(x => x.setAttribute('aria-pressed', x === b)); });
 
 /* ================= main loop ================= */
 function layout(){ sizeBg(); buildName(); const small = innerWidth < 520; SW = small ? 46 : 64; SH = small ? 23 : 32; }
