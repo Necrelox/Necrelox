@@ -27,6 +27,12 @@ pre{margin:0;font-family:var(--mono);white-space:pre;overflow:hidden;max-width:1
 nav{display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:12.5px}
 nav a{text-decoration:none} nav ul{display:flex;gap:clamp(12px,3vw,26px);list-style:none;margin:0;padding:0}
 nav ul a{color:var(--dim)} nav ul a:hover{color:var(--fg);text-decoration:underline}
+#view{color:var(--fg);border:1px solid var(--line);padding:0 8px;background:var(--bg)} #view:hover{border-color:var(--dim)}
+body.term .pg,body.term nav li:not(:last-child),body.term #con-x,body.term #con-k{display:none}
+body.term .con{position:static;width:auto;font-size:clamp(12.5px,3.3vw,14px);text-shadow:0 0 8px var(--bg),0 0 8px var(--bg),0 0 3px var(--bg)}
+body.term .con .out{border:0;max-height:none;padding:0;background:none;overflow:visible}
+body.term .con .out>div{margin-bottom:.5em}
+body.term .con .line{border:0;padding:4px 0;background:none}
 
 .hero{display:flex;flex-direction:column;gap:22px}
 #name{display:block;width:100%;touch-action:pan-y;margin-top:clamp(10px,4vw,44px)}
@@ -81,7 +87,7 @@ footer{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
   <header class="hero">
     <nav aria-label="Sections" class="halo">
       <a href="#haut" id="haut">necrelox</a>
-      <ul><li><a href="#a-propos">à propos</a></li><li><a href="#projets">projets</a></li><li><a href="#liens">liens</a></li></ul>
+      <ul><li><a href="#a-propos">à propos</a></li><li><a href="#projets">projets</a></li><li><a href="#liens">liens</a></li><li><button id="view">terminal</button></li></ul>
     </nav>
     <h1 class="sr">Necrelox</h1>
     <canvas id="name" aria-hidden="true"></canvas>
@@ -230,13 +236,15 @@ let parts = [], NW, NH, hw, hh = 12;
 function buildName(){
   const dpr = Math.min(2, devicePixelRatio || 1); NW = nm.parentElement.clientWidth;
   nx.font = '700 11px ' + MONO; hw = nx.measureText('M').width || 6.6;
-  const cols = Math.floor(NW / hw), mask = nameMask(cols, 2), pad = 3;
+  const cols = Math.floor(NW / hw), mask = nameMask(cols - 6, 2), pad = 3;
   NH = (mask.length + pad * 2) * hh; nm.style.height = NH + 'px'; nm.width = NW * dpr; nm.height = NH * dpr;
   nx.setTransform(dpr, 0, 0, dpr, 0, 0); nx.font = '700 11px ' + MONO; nx.textBaseline = 'top';
   const ox = (NW - cols * hw) / 2; parts = [];
   mask.forEach((row, r) => row.forEach((v, c) => { if (v < .16) return;
     const hx = ox + c * hw, hy = (r + pad) * hh;
     parts.push({hx, hy, x: RM ? hx : hx + (Math.random() - .5) * NW * 1.2, y: RM ? hy : hy + (Math.random() - .5) * 700, vx: 0, vy: 0, g: ':+*#%@'[clamp(v * 6 | 0, 0, 5)]}); }));
+  let r0 = 0; mask.forEach((row, r) => { if (row.every(v => v < .16)) r0 = r + 1; });
+  for (let r = r0; r < mask.length; r++) for (let c = cols - 5; c < cols - 1; c++){ const hx = ox + c * hw, hy = (r + pad) * hh; parts.push({hx, hy, x: hx, y: hy, vx: 0, vy: 0, g: '@', caret: 1}); }
 }
 function frameName(t){
   const rect = nm.getBoundingClientRect(); if (rect.bottom < -50 || rect.top > innerHeight + 50) return;
@@ -246,6 +254,7 @@ function frameName(t){
     const ty = p.hy + Math.sin(t * 1.4 + p.hx * .012) * 1.6, dx = p.x - px, dy = p.y - py, d2 = dx*dx + dy*dy;
     if (d2 < R * R){ const d = Math.sqrt(d2) || 1, f = (1 - d / R); p.vx += dx / d * f * f * 7; p.vy += dy / d * f * f * 7; }
     p.vx = (p.vx + (p.hx - p.x) * .055) * .86; p.vy = (p.vy + (ty - p.y) * .055) * .86; p.x += p.vx; p.y += p.vy;
+    if (p.caret && !RM && (t * 1.8) % 2 > 1) continue;
     const off = Math.abs(p.x - p.hx) + Math.abs(p.y - ty), col = off < 3 ? C.fg : off < 26 ? C.dim : C.faint;
     if (col !== last){ nx.fillStyle = col; last = col; }
     nx.fillText(off > 40 ? '·' : off > 14 ? '+' : p.g, p.x, p.y); }
@@ -322,8 +331,15 @@ const out = $('#con-out'), inp = $('#con-in'), cxb = $('#con-x');
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const B = (cmd, label) => `<button data-cmd="${cmd}">${label || cmd}</button>`;
 const row = (cmd, label, desc) => B(cmd, esc(label)) + ' '.repeat(Math.max(2, 16 - label.length)) + `<span class="dim">${desc}</span>`;
-function say(html){ out.hidden = false; cxb.hidden = false; $('#con-k').hidden = true; const d = document.createElement('div'); d.innerHTML = html; out.appendChild(d); out.scrollTop = out.scrollHeight; }
-function closeOut(){ out.hidden = true; cxb.hidden = true; $('#con-k').hidden = false; out.innerHTML = ''; }
+let term = false;
+function say(html){ out.hidden = false; cxb.hidden = false; $('#con-k').hidden = true; const d = document.createElement('div'); d.innerHTML = html; out.appendChild(d); out.scrollTop = out.scrollHeight; if (term && booted) inp.scrollIntoView({block:'nearest'}); }
+let booted = true;
+function setTerm(on){ if (on === term) return; term = on; document.body.classList.toggle('term', on); $('#view').textContent = on ? 'page' : 'terminal'; out.innerHTML = '';
+  if (on){ $('.hero').appendChild($('#con')); booted = false; ['whoami', 'ls', 'help'].forEach(run); booted = true; scrollTo(0, 0); }
+  else { document.body.appendChild($('#con')); closeOut(); } }
+document.querySelectorAll('.page > section, .lede, .hero > .mono, .page > div').forEach(el => el.classList.add('pg'));
+$('#view').addEventListener('click', () => setTerm(!term));
+function closeOut(){ if (term){ out.innerHTML = ''; return; } out.hidden = true; cxb.hidden = true; $('#con-k').hidden = false; out.innerHTML = ''; }
 const SECT = {'a-propos':'a-propos', apropos:'a-propos', projets:'projets', liens:'liens', haut:'haut', '~':'haut'};
 const goTo = id => document.getElementById(id).scrollIntoView({behavior: RM ? 'auto' : 'smooth', block:'start'});
 const choice = (cmd, opts, cur) => opts.map(o => B(cmd + ' ' + o, o) + (o === cur ? '*' : '')).join('  ');
@@ -332,11 +348,14 @@ function run(raw){
   const [c, ...rest] = line.toLowerCase().split(/\s+/), arg = rest.join(' ');
   if (c === 'clear' || c === 'exit'){ closeOut(); return; }
   say(`<span class="dim">~ $ ${esc(line)}</span>`);
-  if (c === 'help') say([row('whoami', 'whoami', 'qui je suis'), row('ls', 'ls', 'les projets'), row('cat raytracer', 'cat <projet>', 'ouvrir un projet'), row('cd projets', 'cd <section>', 'aller à une section'), row('fond', 'fond', 'effet du fond'), row('filtre', 'filtre', "filtre d'image"), row('clear', 'clear', 'fermer')].join('\n'));
+  if (c === 'help') say([row('whoami', 'whoami', 'qui je suis'), row('ls', 'ls', 'les projets'), row('cat raytracer', 'cat <projet>', 'ouvrir un projet'), row('cd projets', 'cd <section>', 'aller à une section'), row('fond', 'fond', 'effet du fond'), row('filtre', 'filtre', "filtre d'image"), term ? row('page', 'page', 'revenir à la page') : row('terminal', 'terminal', 'tout passer en terminal'), row('clear', 'clear', term ? 'vider' : 'fermer')].join('\n'));
   else if (c === 'whoami') say("necrelox, développeur. Projets d'école et projets perso, gardés ici comme un journal.");
   else if (c === 'ls' || c === 'projets') say(P.map(p => `<span class="dim">${p.year}</span>  ${B('cat ' + p.id, p.id)}${' '.repeat(14 - p.id.length)}<span class="dim">${p.kind}</span>`).join('\n'));
   else if (c === 'cat' || c === 'open'){ const i = P.findIndex(p => p.id === arg);
-    if (i < 0) say(`cat: ${esc(arg || '?')} : introuvable. ${B('ls')}`); else { pick(i); goTo('projets'); say(`${P[i].id} <span class="dim">(${P[i].kind}, ${P[i].year}, ${P[i].stack})</span>\n${P[i].desc}`); } }
+    if (i < 0) say(`cat: ${esc(arg || '?')} : introuvable. ${B('ls')}`); else { pick(i); if (!term) goTo('projets'); say(`${P[i].id} <span class="dim">(${P[i].kind}, ${P[i].year}, ${P[i].stack})</span>\n${P[i].desc}`); } }
+  else if (c === 'terminal'){ setTerm(true); }
+  else if (c === 'page'){ setTerm(false); }
+  else if ((c === 'cd' || c === 'aller') && term) say(`pas de sections en mode terminal. ${B('page')} pour revenir à la page.`);
   else if (c === 'cd' || c === 'aller'){ if (SECT[arg]){ goTo(SECT[arg]); say(`<span class="dim">→ ${SECT[arg]}</span>`); } else say(choice('cd', ['haut', 'a-propos', 'projets', 'liens'])); }
   else if (c === 'fond'){ if (['braise', 'loupe', 'onde'].includes(arg)) setMode(arg); say(choice('fond', ['braise', 'loupe', 'onde'], mode)); }
   else if (c === 'filtre'){ if (['aucun', 'grain', 'crt'].includes(arg)) setFx(arg === 'aucun' ? '' : arg); say(choice('filtre', ['aucun', 'grain', 'crt'], fx || 'aucun')); }
